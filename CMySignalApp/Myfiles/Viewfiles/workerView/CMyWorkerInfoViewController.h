@@ -2,7 +2,7 @@
 //  CMyWorkerInfoViewController.h
 //  CMySignalApp
 //
-//  Created by 3A-5-5-79  朱昌 on 15/6/11.
+//  Created by 3A-5-5-79  azld on 15/6/11.
 //  Copyright (c) 2015年 alex. All rights reserved.
 //
 
