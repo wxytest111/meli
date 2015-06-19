@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BCED9D89-FEB1-4089-BF63-C7542E0B0529</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CMySignalApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CE856CA92F2ACAAA7FBFED1CDCEA5CA5D39A200F</key>
+		<string>github.com:wxytest111/meli.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CMySignalApp.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CE856CA92F2ACAAA7FBFED1CDCEA5CA5D39A200F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:wxytest111/meli.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CE856CA92F2ACAAA7FBFED1CDCEA5CA5D39A200F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CE856CA92F2ACAAA7FBFED1CDCEA5CA5D39A200F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>meli</string>
+		</dict>
+	</array>
+</dict>
+</plist>
