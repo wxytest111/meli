@@ -11,28 +11,31 @@
 @implementation CMyWorkerTuijianParaments
 
 
--(instancetype) initWithdata:(NSString*)workerid type:(NSString*)stype
+-(instancetype) initWithdata:(NSString*)workerid token:(NSString*)token type:(NSString*)stype
 {
     self = [ super init ];
     
     if (self)
     {
-        [ self initdata:workerid type:stype ];
+        [ self initdata:workerid token:token type:stype ];
     }
     return self;
 }
 
--(void) initdata:(NSString*)workerid type:(NSString*)stype
+-(void) initdata:(NSString*)workerid token:(NSString*)token type:(NSString*)stype
 {
-    sworkerid = [ NSString stringWithString:workerid ];
-    sworkertype = [ NSString stringWithString:stype ];
+    sworkerphone    = [ NSString stringWithString:workerid ];
+    stoken          = [ NSString stringWithString:token ];
+    sworkertype     = [ NSString stringWithString:stype ];
 }
 
 -(NSDictionary*) GetServerInterfaceParamens
 {
     pretdic = [ [NSMutableDictionary alloc] init ];
-    [ pretdic setValue:sworkertype      forKey:WORKER_LOAD_TUIJIAN_PARA_WORKERID ];
+    [ pretdic setValue:sworkerphone      forKey:WORKER_LOAD_TUIJIAN_PARA_WORKERPHONE ];
     [ pretdic setValue:sworkertype      forKey:WORKER_LOAD_TUIJIAN_PARA_WORKTYPE ];
+    [ pretdic setValue:stoken           forKey:WORKER_LOAD_TUIJIAN_PARA_TOKEN ];
+    [ pretdic setValue:@"1"             forKey:WORKER_LOAD_TUIJIAN_PARA_PAGE ];
     return pretdic;
 }
 

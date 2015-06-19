@@ -10,11 +10,11 @@
 
 @interface CMyWorkerTuijianParaments : CMyServerParaments
 {
-    NSString* sworkerid;
+    NSString* sworkerphone;
     NSString* sworkertype;
-    
+    NSString* stoken;
 }
 
--(instancetype) initWithdata:(NSString*)workerid type:(NSString*)stype;
+-(instancetype) initWithdata:(NSString*)workerid token:(NSString*)token type:(NSString*)stype;
 
 @end

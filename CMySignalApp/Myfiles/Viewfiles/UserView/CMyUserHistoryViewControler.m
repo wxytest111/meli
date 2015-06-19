@@ -10,11 +10,14 @@
 
 #import "CMyOrderDetailViewController.h"
 
+
+#import "CMyReviewOrderViewController.h"
+#import "CMyOrderCreateViewController.h"
+
 #import "CMyUserLoadordersParaments.h"
 #import "CMyLocalDatas.h"
 
 #import "CMyNetWorkInterface.h"
-
 
 
 @interface CMyUserHistoryViewControler ()
@@ -33,61 +36,70 @@
     return self;
 }
 
+-(instancetype) initWithItem:(BOOL)bcreatebt
+{
+    self = [ super initWithItem:bcreatebt ];
+    
+    if (self)
+    {
+        sright = [ NSString stringWithFormat:@"%@", @"发起" ];
+    }
+    return self;
+}
 
-- (void)viewDidLoad {
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-
-    /*
-    UIView* pview = [ [UIView alloc] init ];
-    CGRect arect1 = [ [UIScreen mainScreen] applicationFrame ];
-    //arect1.origin.y
-    CGRect arect = CGRectMake(0, 0, arect1.size.width, arect1.size.height-93);
-    [ pview setFrame:arect ];
-    [ pview setBackgroundColor:[ UIColor grayColor ] ];
-    [ self.view addSubview:pview ];
-    */
     
     ptableview = [ [UITableView alloc] init ];
     [ ptableview setDataSource:self ];
     [ ptableview setDelegate:self ];
     
-    [ ptableview setSeparatorStyle:UITableViewCellSeparatorStyleNone ];
+    [ ptableview setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine ];
     [ self.view addSubview:ptableview ];
     
     lpage = 1;
     [ self loadorders:1 ];
-//    [ self loadorderlist ];
-    // Do any additional setup after loading the view.
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    CGRect arect = self.view.frame;
-//    [self.view setFrame:CGRectMake(arect.origin.x, arect.origin.y, arect.size.width, arect.size.height-50)];
-    
     [ptableview setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-//    NSLog(@"11111");
+    
+    [ self loadorders:1 ];
+    [ ptableview reloadData ];
 }
 
 -(void) loadorders:(NSInteger)page
 {
-    CMyUserLoadordersParaments* ploadorderlistparament = [ [CMyUserLoadordersParaments alloc] initWithdata:[ [CMyLocalDatas SharedLocalDatas] getlocaluserid ] type:[ [CMyLocalDatas SharedLocalDatas] getlocaluserstype ] token:[ [CMyLocalDatas SharedLocalDatas] getlocaltoken ] page:page ];
+    NSString* userphone = [ [CMyLocalDatas SharedLocalDatas] getlocaluserphone ];
+    NSString* usertype = [ [CMyLocalDatas SharedLocalDatas] getlocaluserstype ];
+    NSString* stoken = [ [CMyLocalDatas SharedLocalDatas] getlocaltoken ];
+    
+    CMyUserLoadordersParaments* ploadorderlistparament = [ [CMyUserLoadordersParaments alloc] initWithdata:userphone type:usertype token:stoken page:page ];
     NSString* sret = [ [CMyNetWorkInterface SharedNetWork] UserOrderlistload:[ ploadorderlistparament GetServerInterfaceParamens ] ];
     CMyServerResultData* pserverresult = [ [CMyServerResultData alloc] initWithResultData:sret ];
     if ([ pserverresult GetResult])
     {
+        NSLog(@"load orders success");
         porderlist = [ [NSMutableArray alloc] initWithArray:(NSArray*)[ pserverresult GetResultData ] ];
         if (porderlist.count > 0)
         {
             lpage++;
         }
+        NSLog(@"order list:%@", porderlist);
+    }
+    else
+    {
+        NSLog(@"load orders success");
     }
 }
 
 -(void) loadorderlist
 {
     NSString* simageboy = [ NSString stringWithFormat:@"%@", @"face_boy.png" ];
-    NSString* simagegirl = [ NSString stringWithFormat:@"%@", @"face_girl.png" ];
+    NSString* simagegirl = [ NSString stringWithFormat:@"%@", USER_DEFAULT_IMAGE ];
     
     NSString* sstatuswaiting        = [ NSString stringWithFormat:@"%@", @"等待应答" ];
     NSString* sstatuscofirm         = [ NSString stringWithFormat:@"%@", @"确认预约" ];
@@ -152,8 +164,6 @@
         
         [ porderlist addObject:porder ];
     }
-
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -170,73 +180,78 @@
     //    NSInteger ltype = [ self getcellviewtype:indexPath.row ];
     cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
     
-    /*
-     time_range: '2015-02-05 13:30-15:30',
-     created_at: '2015-01-07',
-     address: 'afasfdasdf',
-     status: 1,
-     workers
-     */
     NSDictionary* porder = [ porderlist objectAtIndex:indexPath.row ];
-    NSString* stimerange = [ porder objectForKey:@"time_range" ];
-    NSString* screateat = [ porder objectForKey:@"created_at" ];
-    NSArray* pworkers = [ porder objectForKey:@"workers" ];
-    NSInteger* lstatus = [(NSString*)[ porder objectForKey:@"status" ] integerValue];
-    NSString* saddress = [ porder objectForKey:@"address" ];
+    
+    NSString* saddress = [ NSString stringWithFormat:@"%@", [ porder objectForKey:@"address" ] ];
+    NSString* sdate1 = [ NSString stringWithFormat:@"%@", [ porder objectForKey:@"date" ] ];
+    NSString* sdate2 = [ NSString stringWithFormat:@"%@", [ porder objectForKey:@"start_time" ] ];
+    NSString* sdate3 = [ NSString stringWithFormat:@"%@", [ porder objectForKey:@"end_time" ] ];
+    
+    NSString* stimerange = [ NSString stringWithFormat:@"%@ %@--%@", sdate1, sdate2, sdate3 ];
+    NSString* sstatus = [ NSString stringWithFormat:@"%@", [ porder objectForKey:@"status" ] ];
+    
+    NSDictionary* pproduct = [ porder objectForKey:@"product" ];
+    NSString* sproductname = [ NSString stringWithFormat:@"%@", [ pproduct objectForKey:@"name" ] ];
+    
+    NSDictionary* pserver = [ porder objectForKey:@"service" ];
+    NSString* sservername = [ NSString stringWithFormat:@"%@", [ pserver objectForKey:@"name" ] ];
+    
+    NSArray* pworkers = (NSArray*)[ porder objectForKey:@"workers" ];
+    NSString* sworker = [ NSString stringWithFormat:@"%ld 人应约", pworkers.count ];
     
     if (!cell)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier];
-        CGRect arect = CGRectMake(2, 2, cell.contentView.frame.size.width-2*2, cell.contentView.frame.size.height-2*2);
+        CGRect arect = cell.contentView.frame;
+        arect.size.width = [ [UIScreen mainScreen] applicationFrame ].size.width-2*5;
+        cell.contentView.frame = arect;
         
-        CGRect timerangerect = CGRectMake(5, 2, arect.size.width*0.5, 20);
-        UILabel* ptimerange = [ [UILabel alloc] initWithFrame:timerangerect ];
-        [ cell.contentView addSubview:ptimerange ];
-        [ ptimerange setText:stimerange ];
-        [ ptimerange setTextAlignment:NSTextAlignmentLeft ];
-        [ ptimerange setTag:100 ];
-//        CGRect imagerect = CGRectMake(5, 2, arect.size.height-2*2, arect.size.height-2*2);
-//        UIImageView* pimageview = [ [UIImageView alloc] initWithFrame:imagerect ];
-//        [ cell.contentView addSubview:pimageview ];
-//        [ pimageview setImage:[ UIImage imageNamed:[ NSString stringWithString:[ porder objectForKey:@"workerimage" ] ] ] ];
-//        [ pimageview setTag:100 ];
+        CGRect timerect = CGRectMake(2, 0, 260, 20);
+        UILabel*    ptimelable = [ [UILabel alloc] initWithFrame:timerect ];
+        [ ptimelable setText:stimerange ];
+        [ cell.contentView addSubview:ptimelable ];
+        [ ptimelable setTag:100 ];
         
-        CGRect createtimerect = CGRectMake(timerangerect.origin.x + timerangerect.size.width + 20, 5, arect.size.width-timerangerect.size.width-20-20, 15);
-        UILabel* pordertime = [ [UILabel alloc] initWithFrame:createtimerect ];
-        [ cell.contentView addSubview:pordertime ];
-        [ pordertime setText:screateat ];
-        [ pordertime setTextAlignment:NSTextAlignmentLeft ];
-        [ pordertime setTag:101 ];
+        CGRect statrect = CGRectMake(262, 0, 100, 20);
+        UILabel* pstatuslable = [ [UILabel alloc] initWithFrame:statrect ];
+        [ pstatuslable setText:sstatus ];
+        [ cell.contentView addSubview:pstatuslable ];
+        [ pstatuslable setTag:101 ];
         
-        CGRect descrect = CGRectMake(createtimerect.origin.x, createtimerect.origin.y + createtimerect.size.height + 5, createtimerect.size.width, createtimerect.size.height);
-        UILabel* pworkername = [ [UILabel alloc] initWithFrame:descrect ];
-        [ cell.contentView addSubview:pworkername ];
-        [ pworkername setText:[ NSString stringWithString:[ porder objectForKey:@"workername" ] ] ];
-        [ pworkername setTextAlignment:NSTextAlignmentLeft ];
-        [ pworkername setTag:102 ];
+        CGRect adsrect = CGRectMake(2, 22, arect.size.width, 20);
+        UILabel* paddresslable = [ [UILabel alloc] initWithFrame:adsrect ];
+        [ paddresslable setText:saddress ];
+        [ cell.contentView addSubview:paddresslable ];
+        [ paddresslable setTag:102 ];
         
-        CGRect statrect = CGRectMake(arect.size.width-100-20, 2, 100, arect.size.height-2*2);
-        UILabel* pstatusview = [ [UILabel alloc] initWithFrame:statrect ];
-        [ pstatusview setText:[ NSString stringWithString:[ porder objectForKey:@"oderstatus" ] ] ];
-        [ cell.contentView addSubview:pstatusview ];
-        [ pstatusview setTextAlignment:NSTextAlignmentRight ];
-        [ pstatusview setTag:103 ];
-        [ pstatusview setTextColor:[ UIColor redColor ] ];
-        [ pstatusview setAlpha:0.6 ];
+        CGRect productrect = CGRectMake(2, 44, arect.size.width*0.5, 20);
+        UILabel* pproductlable = [ [UILabel alloc] initWithFrame:productrect ];
+        [ pproductlable setText:sproductname ];
+        [ pproductlable setTag:103 ];
+        [ cell.contentView addSubview:pproductlable ];
+        
+        CGRect sevrect = CGRectMake(2+productrect.size.width, 44, arect.size.width*0.5-4, 20);
+        UILabel* pservicelable = [ [UILabel alloc] initWithFrame:sevrect ];
+        [ pservicelable setText:sservername ];
+        [ pservicelable setTag:104 ];
+        [ cell.contentView addSubview:pservicelable ];
     }
     else
     {
-//        UIImageView* pcellview = (UIImageView*)[ cell.contentView viewWithTag:100 ];
-//        [ pcellview setImage:[ UIImage imageNamed:[ NSString stringWithString:[ porder objectForKey:@"workerimage" ] ] ] ];
+        UILabel* time = (UILabel*)[ cell.contentView viewWithTag:100 ];
+        [ time setText:stimerange ];
         
-        UILabel* username = (UILabel*)[ cell.contentView viewWithTag:101 ];
-        [ username setText:[ NSString stringWithString:[ porder objectForKey:@"ordertime" ] ] ];
+        UILabel* status = (UILabel*)[ cell.contentView viewWithTag:101 ];
+        [ status setText:sstatus ];
         
-        UILabel* userdesc = (UILabel*)[ cell.contentView viewWithTag:102 ];
-        [ userdesc setText:[ NSString stringWithString:[ porder objectForKey:@"workername" ] ] ];
+        UILabel* address = (UILabel*)[ cell.contentView viewWithTag:102 ];
+        [ address setText:saddress ];
         
-        UILabel* pstatusview = (UILabel*)[ cell.contentView viewWithTag:103 ];
-        [ pstatusview setText:[ NSString stringWithString:[ porder objectForKey:@"oderstatus" ] ] ];
+        UILabel* product = (UILabel*)[ cell.contentView viewWithTag:103 ];
+        [ product setText:sproductname ];
+
+        UILabel* service = (UILabel*)[ cell.contentView viewWithTag:104 ];
+        [ service setText:sservername ];
     }
     
     return cell;
@@ -262,12 +277,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CMyOrderDetailViewController* porderdetailviercontroler = [ [CMyOrderDetailViewController alloc] init ];
     NSDictionary* pdic = [ porderlist objectAtIndex:indexPath.row ];
-    [ porderdetailviercontroler setorderinfo:pdic ];
-    [ self presentViewController:porderdetailviercontroler animated:YES completion:nil ];
+    CMyReviewOrderViewController* previeworder = [ [CMyReviewOrderViewController alloc] initWithItem:YES info:pdic ];
+    [ self.navigationController pushViewController:previeworder animated:YES ];
 }
 
+
+
+-(void) ClickRightBt:(UIButton*)pbt
+{
+    CMyOrderCreateViewController* pcreateorder = [ [CMyOrderCreateViewController alloc] initWithItem:YES ];
+    [ self.navigationController pushViewController:pcreateorder animated:YES ];
+}
 
 
 /*

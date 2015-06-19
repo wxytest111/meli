@@ -8,7 +8,7 @@
 
 #import "CMyTableViewCell.h"
 
-
+#import "CMyServerResultData.h"
 
 
 @implementation CMyTableViewCell
@@ -33,7 +33,7 @@
     CGRect imagerect = CGRectMake(5, 2, arect.size.height-2*2, arect.size.height-2*2);
     UIImageView* pimageview = [ [UIImageView alloc] initWithFrame:imagerect ];
     [ self addSubview:pimageview ];
-    [ pimageview setImage:[ UIImage imageNamed:@"face_girl.png" ] ];
+    [ pimageview setImage:[ UIImage imageNamed:USER_DEFAULT_IMAGE ] ];
     
     CGRect namerect = CGRectMake(imagerect.origin.x + imagerect.size.width + 20, 5, arect.size.width-imagerect.size.width-20-20, 15);
     UILabel* pusername = [ [UILabel alloc] initWithFrame:namerect ];

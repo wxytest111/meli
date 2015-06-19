@@ -10,6 +10,23 @@
 #define CMySignalApp_UserLoginViewDelegate_h
 
 
+#define UserAddress     @"address"
+#define UserStatus      @"status"
+#define UserMobile      @"mobile"
+#define UserType        @"user_type"
+
+#if (__TYPE__==__USER__)
+
+#define UserID          @"customer_id"
+#define UserName        @"nick_name"
+
+#else if( __TYPE__==__WORKER__ )
+
+#define UserID          @"worker_id"
+#define UserName        @"name"
+
+#endif
+
 @protocol UserLoginViewDelegate <NSObject>
 
 -(void) BtClickCancel:(id)sender;

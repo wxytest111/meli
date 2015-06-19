@@ -7,11 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09154E2B1B345C2000E5BE0D /* CMyUserConfirmOrderParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = 09154E2A1B345C2000E5BE0D /* CMyUserConfirmOrderParaments.m */; };
+		09154E2C1B345EF700E5BE0D /* CMyWorkerContendDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A871F9EF1B3306BE00C0AC58 /* CMyWorkerContendDetailViewController.m */; };
+		09154E2D1B345F2D00E5BE0D /* CMyWorkerLoadOrderParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A871F9F51B3313D000C0AC58 /* CMyWorkerLoadOrderParaments.m */; };
+		09154E2E1B345F3F00E5BE0D /* CMyWorkerRefreshContendsParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A871F9EC1B32F89500C0AC58 /* CMyWorkerRefreshContendsParaments.m */; };
+		09154E2F1B345F6100E5BE0D /* CMyWorkerParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A871F9E91B32F6B000C0AC58 /* CMyWorkerParaments.m */; };
+		09154E301B345F7E00E5BE0D /* CMyWorkerConfirmContendParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A871F9F21B330C3D00C0AC58 /* CMyWorkerConfirmContendParaments.m */; };
+		09154E311B345F8E00E5BE0D /* CMyWorkerDefaultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A871F9E61B32F4E900C0AC58 /* CMyWorkerDefaultViewController.m */; };
+		09154E321B345FB000E5BE0D /* CMyUserConfirmOrderParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = 09154E2A1B345C2000E5BE0D /* CMyUserConfirmOrderParaments.m */; };
+		0948AA251B2F0784006F6F6D /* CMyUserLoginParements.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948AA241B2F0784006F6F6D /* CMyUserLoginParements.m */; };
+		0948AA281B2F0BB1006F6F6D /* CMyUserLogoutParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948AA271B2F0BB1006F6F6D /* CMyUserLogoutParaments.m */; };
 		0960D2791B2DA75E002B765C /* CMyWorkerTuijianParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = 0960D2781B2DA75E002B765C /* CMyWorkerTuijianParaments.m */; };
 		0960D27C1B2DA9B7002B765C /* CMyUserTuijianParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = 0960D27B1B2DA9B7002B765C /* CMyUserTuijianParaments.m */; };
 		0960D27F1B2DB9B8002B765C /* CMyTuijianDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0960D27E1B2DB9B7002B765C /* CMyTuijianDetailViewController.m */; };
 		0960D2821B2DBE92002B765C /* CMyLoadWorkersParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = 0960D2811B2DBE92002B765C /* CMyLoadWorkersParaments.m */; };
 		0960D2851B2DCCBE002B765C /* CMyUserLoadordersParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = 0960D2841B2DCCBE002B765C /* CMyUserLoadordersParaments.m */; };
+		09D3161A1B30743F004ABB3B /* CMyTestCreateworkers.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D316181B30613E004ABB3B /* CMyTestCreateworkers.m */; };
 		A80D0D281B292F2E00FBF541 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A80D0D1E1B292E7F00FBF541 /* libz.dylib */; };
 		A80D0D291B292F3A00FBF541 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80D0D221B292ECE00FBF541 /* MobileCoreServices.framework */; };
 		A80D0D2A1B292F4100FBF541 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80D0D241B292EDE00FBF541 /* SystemConfiguration.framework */; };
@@ -56,8 +67,6 @@
 		A8545CCD1B2A7F40009F2BF4 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = A8545CCC1B2A7F40009F2BF4 /* list.png */; };
 		A8545CCF1B2A8313009F2BF4 /* background_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = A8545CCE1B2A8313009F2BF4 /* background_blue.png */; };
 		A8545CD11B2A866E009F2BF4 /* background3.png in Resources */ = {isa = PBXBuildFile; fileRef = A8545CD01B2A866E009F2BF4 /* background3.png */; };
-		A8545CD41B2AA90C009F2BF4 /* CMyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8545CD31B2AA90C009F2BF4 /* CMyTableView.m */; };
-		A8545CD71B2AAB0B009F2BF4 /* CMyTableViewCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8545CD61B2AAB0B009F2BF4 /* CMyTableViewCellView.m */; };
 		A8545CD91B2AB13F009F2BF4 /* bg_blue_little.png in Resources */ = {isa = PBXBuildFile; fileRef = A8545CD81B2AB13F009F2BF4 /* bg_blue_little.png */; };
 		A86E29631B26D03C00B3B00B /* CMyUserDefaultViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = A86E29621B26D03C00B3B00B /* CMyUserDefaultViewControler.m */; };
 		A86E29661B26D06100B3B00B /* CMyUserHistoryViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = A86E29651B26D06100B3B00B /* CMyUserHistoryViewControler.m */; };
@@ -74,31 +83,142 @@
 		A86E29821B26D3E300B3B00B /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = A86E29811B26D3E300B3B00B /* UIViewExt.m */; };
 		A86F86401B27D3F700D0E1D9 /* CMyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A86F863F1B27D3F700D0E1D9 /* CMyTableViewCell.m */; };
 		A86F86441B27E24000D0E1D9 /* CMyWorkerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A86F86431B27E24000D0E1D9 /* CMyWorkerDetailViewController.m */; };
-		A86F86471B28026700D0E1D9 /* CMyCreateOderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A86F86461B28026700D0E1D9 /* CMyCreateOderViewController.m */; };
 		A86F864A1B281E1500D0E1D9 /* CMyOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A86F86491B281E1500D0E1D9 /* CMyOrderDetailViewController.m */; };
 		A86F864E1B28678A00D0E1D9 /* CMyUserRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A86F864D1B28678A00D0E1D9 /* CMyUserRegisterView.m */; };
 		A86F86521B287F6800D0E1D9 /* CMyUserLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = A86F86511B287F6800D0E1D9 /* CMyUserLoginView.m */; };
+		A871F97A1B32EA1000C0AC58 /* CMyNetWorkInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D621B292FC500FBF541 /* CMyNetWorkInterface.m */; };
+		A871F97B1B32EA1000C0AC58 /* CMyWorkerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A86F86431B27E24000D0E1D9 /* CMyWorkerDetailViewController.m */; };
+		A871F97C1B32EA1000C0AC58 /* CMyUserTuijianParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = 0960D27B1B2DA9B7002B765C /* CMyUserTuijianParaments.m */; };
+		A871F97D1B32EA1000C0AC58 /* CCMyASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D361B292FC500FBF541 /* CCMyASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A871F97E1B32EA1000C0AC58 /* CMyUserLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = A86F86511B287F6800D0E1D9 /* CMyUserLoginView.m */; };
+		A871F97F1B32EA1000C0AC58 /* CMyFinishOrderParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A890483C1B31C46A00346021 /* CMyFinishOrderParaments.m */; };
+		A871F9801B32EA1000C0AC58 /* CMyWorkerInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D961B297F3D00FBF541 /* CMyWorkerInfoViewController.m */; };
+		A871F9811B32EA1000C0AC58 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F264AF1B2670AC00CEC2EB /* ViewController.m */; };
+		A871F9821B32EA1000C0AC58 /* MyMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D5A1B292FC500FBF541 /* MyMD5.m */; };
+		A871F9831B32EA1000C0AC58 /* CMyReviewWorkerParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A89048421B31C63400346021 /* CMyReviewWorkerParaments.m */; };
+		A871F9841B32EA1000C0AC58 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D531B292FC500FBF541 /* SBJsonParser.m */; };
+		A871F9851B32EA1000C0AC58 /* CMyGetMsgCodeParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D651B292FC500FBF541 /* CMyGetMsgCodeParaments.m */; };
+		A871F9861B32EA1000C0AC58 /* CCMyASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D3E1B292FC500FBF541 /* CCMyASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A871F9871B32EA1000C0AC58 /* CMyTuijianDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0960D27E1B2DB9B7002B765C /* CMyTuijianDetailViewController.m */; };
+		A871F9881B32EA1000C0AC58 /* CMyCreateOrderParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A89048271B316EDF00346021 /* CMyCreateOrderParaments.m */; };
+		A871F9891B32EA1000C0AC58 /* CMyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A86F863F1B27D3F700D0E1D9 /* CMyTableViewCell.m */; };
+		A871F98A1B32EA1000C0AC58 /* CMyServerParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D691B292FC500FBF541 /* CMyServerParaments.m */; };
+		A871F98B1B32EA1000C0AC58 /* CMyUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A86E296B1B26D08D00B3B00B /* CMyUserInfoViewController.m */; };
+		A871F98C1B32EA1000C0AC58 /* CMyUserLogoutParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948AA271B2F0BB1006F6F6D /* CMyUserLogoutParaments.m */; };
+		A871F98D1B32EA1000C0AC58 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D511B292FC500FBF541 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A871F98E1B32EA1000C0AC58 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = A86E29811B26D3E300B3B00B /* UIViewExt.m */; };
+		A871F98F1B32EA1000C0AC58 /* CMyUserLogingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89048181B31003600346021 /* CMyUserLogingViewController.m */; };
+		A871F9901B32EA1000C0AC58 /* CMyUserLoginParements.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948AA241B2F0784006F6F6D /* CMyUserLoginParements.m */; };
+		A871F9911B32EA1000C0AC58 /* CMyUserHistoryViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = A86E29651B26D06100B3B00B /* CMyUserHistoryViewControler.m */; };
+		A871F9921B32EA1000C0AC58 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F264AC1B2670AC00CEC2EB /* AppDelegate.m */; };
+		A871F9931B32EA1000C0AC58 /* CCMyKOpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D5F1B292FC500FBF541 /* CCMyKOpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A871F9941B32EA1000C0AC58 /* CCMyASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D381B292FC500FBF541 /* CCMyASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A871F9951B32EA1000C0AC58 /* MainViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F264D31B2671FE00CEC2EB /* MainViewControler.m */; };
+		A871F9961B32EA1000C0AC58 /* CMyOrderCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89048211B314C4F00346021 /* CMyOrderCreateViewController.m */; };
+		A871F9971B32EA1000C0AC58 /* CCMyReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D471B292FC500FBF541 /* CCMyReachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A871F9981B32EA1000C0AC58 /* CMyWorkerOrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D931B297F0C00FBF541 /* CMyWorkerOrderListViewController.m */; };
+		A871F9991B32EA1000C0AC58 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D4F1B292FC500FBF541 /* SBJSON.m */; };
+		A871F99A1B32EA1000C0AC58 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D5C1B292FC500FBF541 /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A871F99B1B32EA1000C0AC58 /* CCMyASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D2F1B292FC500FBF541 /* CCMyASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A871F99C1B32EA1000C0AC58 /* CMyUserRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A86F864D1B28678A00D0E1D9 /* CMyUserRegisterView.m */; };
+		A871F99D1B32EA1000C0AC58 /* CMyUserLoadordersParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = 0960D2841B2DCCBE002B765C /* CMyUserLoadordersParaments.m */; };
+		A871F99E1B32EA1000C0AC58 /* CMyOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A86F86491B281E1500D0E1D9 /* CMyOrderDetailViewController.m */; };
+		A871F99F1B32EA1000C0AC58 /* CCMySecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D581B292FC500FBF541 /* CCMySecurity.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A871F9A01B32EA1000C0AC58 /* CCMyASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D341B292FC500FBF541 /* CCMyASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A871F9A11B32EA1000C0AC58 /* CMyContendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D991B297F7200FBF541 /* CMyContendViewController.m */; };
+		A871F9A21B32EA1000C0AC58 /* CMyUserInfoDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D901B295D1600FBF541 /* CMyUserInfoDetailView.m */; };
+		A871F9A31B32EA1000C0AC58 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D551B292FC500FBF541 /* SBJsonWriter.m */; };
+		A871F9A41B32EA1000C0AC58 /* CCMyASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D321B292FC500FBF541 /* CCMyASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A871F9A51B32EA1000C0AC58 /* CMyLoadProductsParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A89048301B31B20900346021 /* CMyLoadProductsParaments.m */; };
+		A871F9A61B32EA1000C0AC58 /* ItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = A86E297E1B26D3C400B3B00B /* ItemView.m */; };
+		A871F9A71B32EA1000C0AC58 /* CMyOrderDetailParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A890483F1B31C51300346021 /* CMyOrderDetailParaments.m */; };
+		A871F9A81B32EA1000C0AC58 /* CMyLocalDatas.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D8A1B2930CD00FBF541 /* CMyLocalDatas.m */; };
+		A871F9A91B32EA1000C0AC58 /* CMyBeginOrderParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A89048391B31C16000346021 /* CMyBeginOrderParaments.m */; };
+		A871F9AA1B32EA1000C0AC58 /* CMyRefreshTokenParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D671B292FC500FBF541 /* CMyRefreshTokenParaments.m */; };
+		A871F9AB1B32EA1000C0AC58 /* CMyUserDefaultViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = A86E29621B26D03C00B3B00B /* CMyUserDefaultViewControler.m */; };
+		A871F9AC1B32EA1000C0AC58 /* CMyWorkerTuijianParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = 0960D2781B2DA75E002B765C /* CMyWorkerTuijianParaments.m */; };
+		A871F9AD1B32EA1000C0AC58 /* CMyServerResultData.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D6E1B292FC500FBF541 /* CMyServerResultData.m */; };
+		A871F9AE1B32EA1000C0AC58 /* CMyLoadServiceParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A89048331B31B69600346021 /* CMyLoadServiceParaments.m */; };
+		A871F9AF1B32EA1000C0AC58 /* CCMyASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D401B292FC500FBF541 /* CCMyASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A871F9B01B32EA1000C0AC58 /* ModuleViewBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A890481A1B31093600346021 /* ModuleViewBaseViewController.m */; };
+		A871F9B11B32EA1000C0AC58 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D4B1B292FC500FBF541 /* NSObject+SBJSON.m */; };
+		A871F9B21B32EA1000C0AC58 /* CMyUserWorkerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A86E29681B26D07C00B3B00B /* CMyUserWorkerViewController.m */; };
+		A871F9B31B32EA1000C0AC58 /* CMyTestCreateworkers.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D316181B30613E004ABB3B /* CMyTestCreateworkers.m */; };
+		A871F9B41B32EA1000C0AC58 /* BaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A86E296E1B26D22800B3B00B /* BaseNavigationViewController.m */; };
+		A871F9B51B32EA1000C0AC58 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F264A91B2670AC00CEC2EB /* main.m */; };
+		A871F9B61B32EA1000C0AC58 /* CMyReviewOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89048241B314C8500346021 /* CMyReviewOrderViewController.m */; };
+		A871F9B71B32EA1000C0AC58 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D4D1B292FC500FBF541 /* NSString+SBJSON.m */; };
+		A871F9B81B32EA1000C0AC58 /* CMyLoadWorkersParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = 0960D2811B2DBE92002B765C /* CMyLoadWorkersParaments.m */; };
+		A871F9B91B32EA1000C0AC58 /* CMyUserRegisterParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D6B1B292FC500FBF541 /* CMyUserRegisterParaments.m */; };
+		A871F9BA1B32EA1000C0AC58 /* CCMyASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A80D0D3A1B292FC500FBF541 /* CCMyASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A871F9BB1B32EA1000C0AC58 /* CMyUserCancelOrderParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A89048361B31BD2500346021 /* CMyUserCancelOrderParaments.m */; };
+		A871F9BD1B32EA1000C0AC58 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80D0D241B292EDE00FBF541 /* SystemConfiguration.framework */; };
+		A871F9BE1B32EA1000C0AC58 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80D0D221B292ECE00FBF541 /* MobileCoreServices.framework */; };
+		A871F9BF1B32EA1000C0AC58 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A80D0D1E1B292E7F00FBF541 /* libz.dylib */; };
+		A871F9C11B32EA1000C0AC58 /* custom.png in Resources */ = {isa = PBXBuildFile; fileRef = A8545CBD1B2A7F00009F2BF4 /* custom.png */; };
+		A871F9C21B32EA1000C0AC58 /* background3.png in Resources */ = {isa = PBXBuildFile; fileRef = A8545CD01B2A866E009F2BF4 /* background3.png */; };
+		A871F9C31B32EA1000C0AC58 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = A8545CBC1B2A7F00009F2BF4 /* camera.png */; };
+		A871F9C41B32EA1000C0AC58 /* tuijian.png in Resources */ = {isa = PBXBuildFile; fileRef = A8545CC11B2A7F00009F2BF4 /* tuijian.png */; };
+		A871F9C51B32EA1000C0AC58 /* background_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = A8545CCE1B2A8313009F2BF4 /* background_blue.png */; };
+		A871F9C61B32EA1000C0AC58 /* bg_blue_little.png in Resources */ = {isa = PBXBuildFile; fileRef = A8545CD81B2AB13F009F2BF4 /* bg_blue_little.png */; };
+		A871F9C71B32EA1000C0AC58 /* selectTabbar_bg_all1.png in Resources */ = {isa = PBXBuildFile; fileRef = A86E29751B26D37F00B3B00B /* selectTabbar_bg_all1.png */; };
+		A871F9C91B32EA1000C0AC58 /* tab_bg_all.png in Resources */ = {isa = PBXBuildFile; fileRef = A86E29761B26D37F00B3B00B /* tab_bg_all.png */; };
+		A871F9CA1B32EA1000C0AC58 /* nav_bg_all.png in Resources */ = {isa = PBXBuildFile; fileRef = A86E29741B26D37F00B3B00B /* nav_bg_all.png */; };
+		A871F9CB1B32EA1000C0AC58 /* start.png in Resources */ = {isa = PBXBuildFile; fileRef = A8545CC01B2A7F00009F2BF4 /* start.png */; };
+		A871F9CC1B32EA1000C0AC58 /* car002.png in Resources */ = {isa = PBXBuildFile; fileRef = A890482A1B31992700346021 /* car002.png */; };
+		A871F9CD1B32EA1000C0AC58 /* car001.png in Resources */ = {isa = PBXBuildFile; fileRef = A890482B1B31992700346021 /* car001.png */; };
+		A871F9CE1B32EA1000C0AC58 /* Delete.png in Resources */ = {isa = PBXBuildFile; fileRef = A8545CBE1B2A7F00009F2BF4 /* Delete.png */; };
+		A871F9CF1B32EA1000C0AC58 /* face_girl.png in Resources */ = {isa = PBXBuildFile; fileRef = A86E29721B26D37F00B3B00B /* face_girl.png */; };
+		A871F9D01B32EA1000C0AC58 /* README-GHUnit in Resources */ = {isa = PBXBuildFile; fileRef = A80D0D441B292FC500FBF541 /* README-GHUnit */; };
+		A871F9D11B32EA1000C0AC58 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = A8545CCC1B2A7F40009F2BF4 /* list.png */; };
+		A871F9D31B32EA1000C0AC58 /* car003.png in Resources */ = {isa = PBXBuildFile; fileRef = A89048291B31992700346021 /* car003.png */; };
+		A871F9D41B32EA1000C0AC58 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8F264B41B2670AC00CEC2EB /* Images.xcassets */; };
+		A871F9D51B32EA1000C0AC58 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = A8545CC21B2A7F00009F2BF4 /* user.png */; };
+		A871F9D61B32EA1000C0AC58 /* msg_new.png in Resources */ = {isa = PBXBuildFile; fileRef = A86E29731B26D37F00B3B00B /* msg_new.png */; };
+		A871F9D71B32EA1000C0AC58 /* face_boy.png in Resources */ = {isa = PBXBuildFile; fileRef = A86E29711B26D37F00B3B00B /* face_boy.png */; };
+		A871F9D81B32EA1000C0AC58 /* worker.png in Resources */ = {isa = PBXBuildFile; fileRef = A8545CC31B2A7F00009F2BF4 /* worker.png */; };
+		A871F9E21B32EC5700C0AC58 /* CMyWorkerLogingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A871F9E11B32EC5700C0AC58 /* CMyWorkerLogingViewController.m */; };
+		A871F9E31B32ECB200C0AC58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F264B11B2670AC00CEC2EB /* Main.storyboard */; };
+		A871F9E41B32ECB200C0AC58 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8F264B61B2670AC00CEC2EB /* LaunchScreen.xib */; };
+		A871F9E71B32F4E900C0AC58 /* CMyWorkerDefaultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A871F9E61B32F4E900C0AC58 /* CMyWorkerDefaultViewController.m */; };
+		A871F9EA1B32F6B000C0AC58 /* CMyWorkerParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A871F9E91B32F6B000C0AC58 /* CMyWorkerParaments.m */; };
+		A871F9ED1B32F89500C0AC58 /* CMyWorkerRefreshContendsParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A871F9EC1B32F89500C0AC58 /* CMyWorkerRefreshContendsParaments.m */; };
+		A871F9F01B3306BE00C0AC58 /* CMyWorkerContendDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A871F9EF1B3306BE00C0AC58 /* CMyWorkerContendDetailViewController.m */; };
+		A871F9F31B330C3D00C0AC58 /* CMyWorkerConfirmContendParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A871F9F21B330C3D00C0AC58 /* CMyWorkerConfirmContendParaments.m */; };
+		A871F9F61B3313D000C0AC58 /* CMyWorkerLoadOrderParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A871F9F51B3313D000C0AC58 /* CMyWorkerLoadOrderParaments.m */; };
+		A871F9F91B33184D00C0AC58 /* CMyWorkerOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A871F9F81B33184D00C0AC58 /* CMyWorkerOrderDetailViewController.m */; };
+		A871F9FC1B33196A00C0AC58 /* CMyWorkerCancelOrderParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A871F9FB1B33196A00C0AC58 /* CMyWorkerCancelOrderParaments.m */; };
+		A89048191B31003600346021 /* CMyUserLogingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89048181B31003600346021 /* CMyUserLogingViewController.m */; };
+		A890481C1B31093600346021 /* ModuleViewBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A890481A1B31093600346021 /* ModuleViewBaseViewController.m */; };
+		A89048221B314C4F00346021 /* CMyOrderCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89048211B314C4F00346021 /* CMyOrderCreateViewController.m */; };
+		A89048251B314C8500346021 /* CMyReviewOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89048241B314C8500346021 /* CMyReviewOrderViewController.m */; };
+		A89048281B316EDF00346021 /* CMyCreateOrderParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A89048271B316EDF00346021 /* CMyCreateOrderParaments.m */; };
+		A890482C1B31992700346021 /* car003.png in Resources */ = {isa = PBXBuildFile; fileRef = A89048291B31992700346021 /* car003.png */; };
+		A890482D1B31992700346021 /* car002.png in Resources */ = {isa = PBXBuildFile; fileRef = A890482A1B31992700346021 /* car002.png */; };
+		A890482E1B31992700346021 /* car001.png in Resources */ = {isa = PBXBuildFile; fileRef = A890482B1B31992700346021 /* car001.png */; };
+		A89048311B31B20900346021 /* CMyLoadProductsParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A89048301B31B20900346021 /* CMyLoadProductsParaments.m */; };
+		A89048341B31B69600346021 /* CMyLoadServiceParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A89048331B31B69600346021 /* CMyLoadServiceParaments.m */; };
+		A89048371B31BD2500346021 /* CMyUserCancelOrderParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A89048361B31BD2500346021 /* CMyUserCancelOrderParaments.m */; };
+		A890483A1B31C16000346021 /* CMyBeginOrderParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A89048391B31C16000346021 /* CMyBeginOrderParaments.m */; };
+		A890483D1B31C46A00346021 /* CMyFinishOrderParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A890483C1B31C46A00346021 /* CMyFinishOrderParaments.m */; };
+		A89048401B31C51300346021 /* CMyOrderDetailParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A890483F1B31C51300346021 /* CMyOrderDetailParaments.m */; };
+		A89048431B31C63400346021 /* CMyReviewWorkerParaments.m in Sources */ = {isa = PBXBuildFile; fileRef = A89048421B31C63400346021 /* CMyReviewWorkerParaments.m */; };
 		A8F264AA1B2670AC00CEC2EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F264A91B2670AC00CEC2EB /* main.m */; };
 		A8F264AD1B2670AC00CEC2EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F264AC1B2670AC00CEC2EB /* AppDelegate.m */; };
 		A8F264B01B2670AC00CEC2EB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F264AF1B2670AC00CEC2EB /* ViewController.m */; };
 		A8F264B31B2670AC00CEC2EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F264B11B2670AC00CEC2EB /* Main.storyboard */; };
 		A8F264B51B2670AC00CEC2EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8F264B41B2670AC00CEC2EB /* Images.xcassets */; };
 		A8F264B81B2670AC00CEC2EB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8F264B61B2670AC00CEC2EB /* LaunchScreen.xib */; };
-		A8F264C41B2670AC00CEC2EB /* CMySignalAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F264C31B2670AC00CEC2EB /* CMySignalAppTests.m */; };
 		A8F264D41B2671FE00CEC2EB /* MainViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F264D31B2671FE00CEC2EB /* MainViewControler.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		A8F264BE1B2670AC00CEC2EB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A8F2649C1B2670AC00CEC2EB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A8F264A31B2670AC00CEC2EB;
-			remoteInfo = CMySignalApp;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		09154E291B345C2000E5BE0D /* CMyUserConfirmOrderParaments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyUserConfirmOrderParaments.h; sourceTree = "<group>"; };
+		09154E2A1B345C2000E5BE0D /* CMyUserConfirmOrderParaments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyUserConfirmOrderParaments.m; sourceTree = "<group>"; };
+		0948AA231B2F0784006F6F6D /* CMyUserLoginParements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyUserLoginParements.h; sourceTree = "<group>"; };
+		0948AA241B2F0784006F6F6D /* CMyUserLoginParements.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyUserLoginParements.m; sourceTree = "<group>"; };
+		0948AA261B2F0BB1006F6F6D /* CMyUserLogoutParaments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyUserLogoutParaments.h; sourceTree = "<group>"; };
+		0948AA271B2F0BB1006F6F6D /* CMyUserLogoutParaments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyUserLogoutParaments.m; sourceTree = "<group>"; };
 		0960D2771B2DA75E002B765C /* CMyWorkerTuijianParaments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyWorkerTuijianParaments.h; sourceTree = "<group>"; };
 		0960D2781B2DA75E002B765C /* CMyWorkerTuijianParaments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyWorkerTuijianParaments.m; sourceTree = "<group>"; };
 		0960D27A1B2DA9B7002B765C /* CMyUserTuijianParaments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyUserTuijianParaments.h; sourceTree = "<group>"; };
@@ -109,6 +229,8 @@
 		0960D2811B2DBE92002B765C /* CMyLoadWorkersParaments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyLoadWorkersParaments.m; sourceTree = "<group>"; };
 		0960D2831B2DCCBE002B765C /* CMyUserLoadordersParaments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyUserLoadordersParaments.h; sourceTree = "<group>"; };
 		0960D2841B2DCCBE002B765C /* CMyUserLoadordersParaments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyUserLoadordersParaments.m; sourceTree = "<group>"; };
+		09D316171B30613E004ABB3B /* CMyTestCreateworkers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyTestCreateworkers.h; sourceTree = "<group>"; };
+		09D316181B30613E004ABB3B /* CMyTestCreateworkers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyTestCreateworkers.m; sourceTree = "<group>"; };
 		A80D0D1E1B292E7F00FBF541 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A80D0D221B292ECE00FBF541 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		A80D0D241B292EDE00FBF541 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -190,10 +312,6 @@
 		A8545CCC1B2A7F40009F2BF4 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
 		A8545CCE1B2A8313009F2BF4 /* background_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_blue.png; sourceTree = "<group>"; };
 		A8545CD01B2A866E009F2BF4 /* background3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background3.png; sourceTree = "<group>"; };
-		A8545CD21B2AA90C009F2BF4 /* CMyTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyTableView.h; sourceTree = "<group>"; };
-		A8545CD31B2AA90C009F2BF4 /* CMyTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyTableView.m; sourceTree = "<group>"; };
-		A8545CD51B2AAB0B009F2BF4 /* CMyTableViewCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyTableViewCellView.h; sourceTree = "<group>"; };
-		A8545CD61B2AAB0B009F2BF4 /* CMyTableViewCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyTableViewCellView.m; sourceTree = "<group>"; };
 		A8545CD81B2AB13F009F2BF4 /* bg_blue_little.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_blue_little.png; sourceTree = "<group>"; };
 		A86E29611B26D03C00B3B00B /* CMyUserDefaultViewControler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyUserDefaultViewControler.h; sourceTree = "<group>"; };
 		A86E29621B26D03C00B3B00B /* CMyUserDefaultViewControler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyUserDefaultViewControler.m; sourceTree = "<group>"; };
@@ -219,8 +337,6 @@
 		A86F863F1B27D3F700D0E1D9 /* CMyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyTableViewCell.m; sourceTree = "<group>"; };
 		A86F86421B27E24000D0E1D9 /* CMyWorkerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyWorkerDetailViewController.h; sourceTree = "<group>"; };
 		A86F86431B27E24000D0E1D9 /* CMyWorkerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyWorkerDetailViewController.m; sourceTree = "<group>"; };
-		A86F86451B28026700D0E1D9 /* CMyCreateOderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyCreateOderViewController.h; sourceTree = "<group>"; };
-		A86F86461B28026700D0E1D9 /* CMyCreateOderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyCreateOderViewController.m; sourceTree = "<group>"; };
 		A86F86481B281E1500D0E1D9 /* CMyOrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyOrderDetailViewController.h; sourceTree = "<group>"; };
 		A86F86491B281E1500D0E1D9 /* CMyOrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyOrderDetailViewController.m; sourceTree = "<group>"; };
 		A86F864C1B28678A00D0E1D9 /* CMyUserRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyUserRegisterView.h; sourceTree = "<group>"; };
@@ -228,6 +344,53 @@
 		A86F864F1B287ED100D0E1D9 /* UserLoginViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLoginViewDelegate.h; sourceTree = "<group>"; };
 		A86F86501B287F6800D0E1D9 /* CMyUserLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyUserLoginView.h; sourceTree = "<group>"; };
 		A86F86511B287F6800D0E1D9 /* CMyUserLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyUserLoginView.m; sourceTree = "<group>"; };
+		A871F9DC1B32EA1000C0AC58 /* CMySignalApp copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CMySignalApp copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A871F9DE1B32EBC400C0AC58 /* CMySignalAppW.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CMySignalAppW.plist; sourceTree = "<group>"; };
+		A871F9E01B32EC5700C0AC58 /* CMyWorkerLogingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyWorkerLogingViewController.h; sourceTree = "<group>"; };
+		A871F9E11B32EC5700C0AC58 /* CMyWorkerLogingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyWorkerLogingViewController.m; sourceTree = "<group>"; };
+		A871F9E51B32F4E900C0AC58 /* CMyWorkerDefaultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyWorkerDefaultViewController.h; sourceTree = "<group>"; };
+		A871F9E61B32F4E900C0AC58 /* CMyWorkerDefaultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyWorkerDefaultViewController.m; sourceTree = "<group>"; };
+		A871F9E81B32F6B000C0AC58 /* CMyWorkerParaments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyWorkerParaments.h; sourceTree = "<group>"; };
+		A871F9E91B32F6B000C0AC58 /* CMyWorkerParaments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyWorkerParaments.m; sourceTree = "<group>"; };
+		A871F9EB1B32F89500C0AC58 /* CMyWorkerRefreshContendsParaments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyWorkerRefreshContendsParaments.h; sourceTree = "<group>"; };
+		A871F9EC1B32F89500C0AC58 /* CMyWorkerRefreshContendsParaments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyWorkerRefreshContendsParaments.m; sourceTree = "<group>"; };
+		A871F9EE1B3306BE00C0AC58 /* CMyWorkerContendDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyWorkerContendDetailViewController.h; sourceTree = "<group>"; };
+		A871F9EF1B3306BE00C0AC58 /* CMyWorkerContendDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyWorkerContendDetailViewController.m; sourceTree = "<group>"; };
+		A871F9F11B330C3D00C0AC58 /* CMyWorkerConfirmContendParaments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyWorkerConfirmContendParaments.h; sourceTree = "<group>"; };
+		A871F9F21B330C3D00C0AC58 /* CMyWorkerConfirmContendParaments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyWorkerConfirmContendParaments.m; sourceTree = "<group>"; };
+		A871F9F41B3313D000C0AC58 /* CMyWorkerLoadOrderParaments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyWorkerLoadOrderParaments.h; sourceTree = "<group>"; };
+		A871F9F51B3313D000C0AC58 /* CMyWorkerLoadOrderParaments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyWorkerLoadOrderParaments.m; sourceTree = "<group>"; };
+		A871F9F71B33184D00C0AC58 /* CMyWorkerOrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyWorkerOrderDetailViewController.h; sourceTree = "<group>"; };
+		A871F9F81B33184D00C0AC58 /* CMyWorkerOrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyWorkerOrderDetailViewController.m; sourceTree = "<group>"; };
+		A871F9FA1B33196A00C0AC58 /* CMyWorkerCancelOrderParaments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyWorkerCancelOrderParaments.h; sourceTree = "<group>"; };
+		A871F9FB1B33196A00C0AC58 /* CMyWorkerCancelOrderParaments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyWorkerCancelOrderParaments.m; sourceTree = "<group>"; };
+		A89048171B31003600346021 /* CMyUserLogingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyUserLogingViewController.h; sourceTree = "<group>"; };
+		A89048181B31003600346021 /* CMyUserLogingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyUserLogingViewController.m; sourceTree = "<group>"; };
+		A890481A1B31093600346021 /* ModuleViewBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleViewBaseViewController.m; sourceTree = "<group>"; };
+		A890481B1B31093600346021 /* ModuleViewBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleViewBaseViewController.h; sourceTree = "<group>"; };
+		A89048201B314C4F00346021 /* CMyOrderCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyOrderCreateViewController.h; sourceTree = "<group>"; };
+		A89048211B314C4F00346021 /* CMyOrderCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyOrderCreateViewController.m; sourceTree = "<group>"; };
+		A89048231B314C8500346021 /* CMyReviewOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyReviewOrderViewController.h; sourceTree = "<group>"; };
+		A89048241B314C8500346021 /* CMyReviewOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyReviewOrderViewController.m; sourceTree = "<group>"; };
+		A89048261B316EDF00346021 /* CMyCreateOrderParaments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyCreateOrderParaments.h; sourceTree = "<group>"; };
+		A89048271B316EDF00346021 /* CMyCreateOrderParaments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyCreateOrderParaments.m; sourceTree = "<group>"; };
+		A89048291B31992700346021 /* car003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car003.png; sourceTree = "<group>"; };
+		A890482A1B31992700346021 /* car002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car002.png; sourceTree = "<group>"; };
+		A890482B1B31992700346021 /* car001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car001.png; sourceTree = "<group>"; };
+		A890482F1B31B20900346021 /* CMyLoadProductsParaments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyLoadProductsParaments.h; sourceTree = "<group>"; };
+		A89048301B31B20900346021 /* CMyLoadProductsParaments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyLoadProductsParaments.m; sourceTree = "<group>"; };
+		A89048321B31B69600346021 /* CMyLoadServiceParaments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyLoadServiceParaments.h; sourceTree = "<group>"; };
+		A89048331B31B69600346021 /* CMyLoadServiceParaments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyLoadServiceParaments.m; sourceTree = "<group>"; };
+		A89048351B31BD2500346021 /* CMyUserCancelOrderParaments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyUserCancelOrderParaments.h; sourceTree = "<group>"; };
+		A89048361B31BD2500346021 /* CMyUserCancelOrderParaments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyUserCancelOrderParaments.m; sourceTree = "<group>"; };
+		A89048381B31C16000346021 /* CMyBeginOrderParaments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyBeginOrderParaments.h; sourceTree = "<group>"; };
+		A89048391B31C16000346021 /* CMyBeginOrderParaments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyBeginOrderParaments.m; sourceTree = "<group>"; };
+		A890483B1B31C46A00346021 /* CMyFinishOrderParaments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyFinishOrderParaments.h; sourceTree = "<group>"; };
+		A890483C1B31C46A00346021 /* CMyFinishOrderParaments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyFinishOrderParaments.m; sourceTree = "<group>"; };
+		A890483E1B31C51300346021 /* CMyOrderDetailParaments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyOrderDetailParaments.h; sourceTree = "<group>"; };
+		A890483F1B31C51300346021 /* CMyOrderDetailParaments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyOrderDetailParaments.m; sourceTree = "<group>"; };
+		A89048411B31C63400346021 /* CMyReviewWorkerParaments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyReviewWorkerParaments.h; sourceTree = "<group>"; };
+		A89048421B31C63400346021 /* CMyReviewWorkerParaments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyReviewWorkerParaments.m; sourceTree = "<group>"; };
 		A8F264A41B2670AC00CEC2EB /* CMySignalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CMySignalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F264A81B2670AC00CEC2EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8F264A91B2670AC00CEC2EB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -238,7 +401,6 @@
 		A8F264B21B2670AC00CEC2EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A8F264B41B2670AC00CEC2EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A8F264B71B2670AC00CEC2EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		A8F264BD1B2670AC00CEC2EB /* CMySignalAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CMySignalAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F264C21B2670AC00CEC2EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8F264C31B2670AC00CEC2EB /* CMySignalAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMySignalAppTests.m; sourceTree = "<group>"; };
 		A8F264D21B2671FE00CEC2EB /* MainViewControler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewControler.h; sourceTree = "<group>"; };
@@ -246,6 +408,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A871F9BC1B32EA1000C0AC58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A871F9BD1B32EA1000C0AC58 /* SystemConfiguration.framework in Frameworks */,
+				A871F9BE1B32EA1000C0AC58 /* MobileCoreServices.framework in Frameworks */,
+				A871F9BF1B32EA1000C0AC58 /* libz.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A8F264A11B2670AC00CEC2EB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -253,13 +425,6 @@
 				A80D0D2A1B292F4100FBF541 /* SystemConfiguration.framework in Frameworks */,
 				A80D0D291B292F3A00FBF541 /* MobileCoreServices.framework in Frameworks */,
 				A80D0D281B292F2E00FBF541 /* libz.dylib in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A8F264BA1B2670AC00CEC2EB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +588,38 @@
 				0960D2811B2DBE92002B765C /* CMyLoadWorkersParaments.m */,
 				0960D2831B2DCCBE002B765C /* CMyUserLoadordersParaments.h */,
 				0960D2841B2DCCBE002B765C /* CMyUserLoadordersParaments.m */,
+				0948AA231B2F0784006F6F6D /* CMyUserLoginParements.h */,
+				0948AA241B2F0784006F6F6D /* CMyUserLoginParements.m */,
+				0948AA261B2F0BB1006F6F6D /* CMyUserLogoutParaments.h */,
+				0948AA271B2F0BB1006F6F6D /* CMyUserLogoutParaments.m */,
+				A89048261B316EDF00346021 /* CMyCreateOrderParaments.h */,
+				A89048271B316EDF00346021 /* CMyCreateOrderParaments.m */,
+				A890482F1B31B20900346021 /* CMyLoadProductsParaments.h */,
+				A89048301B31B20900346021 /* CMyLoadProductsParaments.m */,
+				A89048321B31B69600346021 /* CMyLoadServiceParaments.h */,
+				A89048331B31B69600346021 /* CMyLoadServiceParaments.m */,
+				A89048351B31BD2500346021 /* CMyUserCancelOrderParaments.h */,
+				A89048361B31BD2500346021 /* CMyUserCancelOrderParaments.m */,
+				A89048381B31C16000346021 /* CMyBeginOrderParaments.h */,
+				A89048391B31C16000346021 /* CMyBeginOrderParaments.m */,
+				A890483B1B31C46A00346021 /* CMyFinishOrderParaments.h */,
+				A890483C1B31C46A00346021 /* CMyFinishOrderParaments.m */,
+				A890483E1B31C51300346021 /* CMyOrderDetailParaments.h */,
+				A890483F1B31C51300346021 /* CMyOrderDetailParaments.m */,
+				A89048411B31C63400346021 /* CMyReviewWorkerParaments.h */,
+				A89048421B31C63400346021 /* CMyReviewWorkerParaments.m */,
+				A871F9E81B32F6B000C0AC58 /* CMyWorkerParaments.h */,
+				A871F9E91B32F6B000C0AC58 /* CMyWorkerParaments.m */,
+				A871F9EB1B32F89500C0AC58 /* CMyWorkerRefreshContendsParaments.h */,
+				A871F9EC1B32F89500C0AC58 /* CMyWorkerRefreshContendsParaments.m */,
+				A871F9F11B330C3D00C0AC58 /* CMyWorkerConfirmContendParaments.h */,
+				A871F9F21B330C3D00C0AC58 /* CMyWorkerConfirmContendParaments.m */,
+				A871F9F41B3313D000C0AC58 /* CMyWorkerLoadOrderParaments.h */,
+				A871F9F51B3313D000C0AC58 /* CMyWorkerLoadOrderParaments.m */,
+				A871F9FA1B33196A00C0AC58 /* CMyWorkerCancelOrderParaments.h */,
+				A871F9FB1B33196A00C0AC58 /* CMyWorkerCancelOrderParaments.m */,
+				09154E291B345C2000E5BE0D /* CMyUserConfirmOrderParaments.h */,
+				09154E2A1B345C2000E5BE0D /* CMyUserConfirmOrderParaments.m */,
 			);
 			path = serverparaments;
 			sourceTree = "<group>";
@@ -447,6 +644,9 @@
 		A86E29701B26D37F00B3B00B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				A89048291B31992700346021 /* car003.png */,
+				A890482A1B31992700346021 /* car002.png */,
+				A890482B1B31992700346021 /* car001.png */,
 				A8545CD81B2AB13F009F2BF4 /* bg_blue_little.png */,
 				A8545CD01B2A866E009F2BF4 /* background3.png */,
 				A8545CCE1B2A8313009F2BF4 /* background_blue.png */,
@@ -471,14 +671,20 @@
 		A86F86411B27E05E00D0E1D9 /* detailview */ = {
 			isa = PBXGroup;
 			children = (
-				A86F86451B28026700D0E1D9 /* CMyCreateOderViewController.h */,
-				A86F86461B28026700D0E1D9 /* CMyCreateOderViewController.m */,
 				A86F86421B27E24000D0E1D9 /* CMyWorkerDetailViewController.h */,
 				A86F86431B27E24000D0E1D9 /* CMyWorkerDetailViewController.m */,
 				A86F86481B281E1500D0E1D9 /* CMyOrderDetailViewController.h */,
 				A86F86491B281E1500D0E1D9 /* CMyOrderDetailViewController.m */,
 				0960D27D1B2DB9B7002B765C /* CMyTuijianDetailViewController.h */,
 				0960D27E1B2DB9B7002B765C /* CMyTuijianDetailViewController.m */,
+				A89048201B314C4F00346021 /* CMyOrderCreateViewController.h */,
+				A89048211B314C4F00346021 /* CMyOrderCreateViewController.m */,
+				A89048231B314C8500346021 /* CMyReviewOrderViewController.h */,
+				A89048241B314C8500346021 /* CMyReviewOrderViewController.m */,
+				A871F9EE1B3306BE00C0AC58 /* CMyWorkerContendDetailViewController.h */,
+				A871F9EF1B3306BE00C0AC58 /* CMyWorkerContendDetailViewController.m */,
+				A871F9F71B33184D00C0AC58 /* CMyWorkerOrderDetailViewController.h */,
+				A871F9F81B33184D00C0AC58 /* CMyWorkerOrderDetailViewController.m */,
 			);
 			path = detailview;
 			sourceTree = "<group>";
@@ -511,7 +717,7 @@
 			isa = PBXGroup;
 			children = (
 				A8F264A41B2670AC00CEC2EB /* CMySignalApp.app */,
-				A8F264BD1B2670AC00CEC2EB /* CMySignalAppTests.xctest */,
+				A871F9DC1B32EA1000C0AC58 /* CMySignalApp copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -536,6 +742,7 @@
 		A8F264A71B2670AC00CEC2EB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A871F9DE1B32EBC400C0AC58 /* CMySignalAppW.plist */,
 				A8F264A81B2670AC00CEC2EB /* Info.plist */,
 				A8F264A91B2670AC00CEC2EB /* main.m */,
 			);
@@ -547,6 +754,8 @@
 			children = (
 				A8F264C31B2670AC00CEC2EB /* CMySignalAppTests.m */,
 				A8F264C11B2670AC00CEC2EB /* Supporting Files */,
+				09D316171B30613E004ABB3B /* CMyTestCreateworkers.h */,
+				09D316181B30613E004ABB3B /* CMyTestCreateworkers.m */,
 			);
 			path = CMySignalAppTests;
 			sourceTree = "<group>";
@@ -607,6 +816,8 @@
 				A80D0D961B297F3D00FBF541 /* CMyWorkerInfoViewController.m */,
 				A80D0D921B297F0C00FBF541 /* CMyWorkerOrderListViewController.h */,
 				A80D0D931B297F0C00FBF541 /* CMyWorkerOrderListViewController.m */,
+				A871F9E51B32F4E900C0AC58 /* CMyWorkerDefaultViewController.h */,
+				A871F9E61B32F4E900C0AC58 /* CMyWorkerDefaultViewController.m */,
 			);
 			path = workerView;
 			sourceTree = "<group>";
@@ -614,20 +825,22 @@
 		A8F264D11B2671E400CEC2EB /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
+				A890481B1B31093600346021 /* ModuleViewBaseViewController.h */,
+				A890481A1B31093600346021 /* ModuleViewBaseViewController.m */,
 				A86E29801B26D3E300B3B00B /* UIViewExt.h */,
 				A86E29811B26D3E300B3B00B /* UIViewExt.m */,
 				A86E297D1B26D3C400B3B00B /* ItemView.h */,
 				A86E297E1B26D3C400B3B00B /* ItemView.m */,
-				A8545CD21B2AA90C009F2BF4 /* CMyTableView.h */,
-				A8545CD31B2AA90C009F2BF4 /* CMyTableView.m */,
-				A8545CD51B2AAB0B009F2BF4 /* CMyTableViewCellView.h */,
-				A8545CD61B2AAB0B009F2BF4 /* CMyTableViewCellView.m */,
 				A8F264D21B2671FE00CEC2EB /* MainViewControler.h */,
 				A8F264D31B2671FE00CEC2EB /* MainViewControler.m */,
 				A86E296D1B26D22800B3B00B /* BaseNavigationViewController.h */,
 				A86E296E1B26D22800B3B00B /* BaseNavigationViewController.m */,
 				A86F863E1B27D3F700D0E1D9 /* CMyTableViewCell.h */,
 				A86F863F1B27D3F700D0E1D9 /* CMyTableViewCell.m */,
+				A89048171B31003600346021 /* CMyUserLogingViewController.h */,
+				A89048181B31003600346021 /* CMyUserLogingViewController.m */,
+				A871F9E01B32EC5700C0AC58 /* CMyWorkerLogingViewController.h */,
+				A871F9E11B32EC5700C0AC58 /* CMyWorkerLogingViewController.m */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -635,6 +848,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A871F9781B32EA1000C0AC58 /* CMySignalAppW */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A871F9D91B32EA1000C0AC58 /* Build configuration list for PBXNativeTarget "CMySignalAppW" */;
+			buildPhases = (
+				A871F9791B32EA1000C0AC58 /* Sources */,
+				A871F9BC1B32EA1000C0AC58 /* Frameworks */,
+				A871F9C01B32EA1000C0AC58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CMySignalAppW;
+			productName = CMySignalApp;
+			productReference = A871F9DC1B32EA1000C0AC58 /* CMySignalApp copy.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A8F264A31B2670AC00CEC2EB /* CMySignalApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A8F264C71B2670AC00CEC2EB /* Build configuration list for PBXNativeTarget "CMySignalApp" */;
@@ -652,24 +882,6 @@
 			productReference = A8F264A41B2670AC00CEC2EB /* CMySignalApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A8F264BC1B2670AC00CEC2EB /* CMySignalAppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A8F264CA1B2670AC00CEC2EB /* Build configuration list for PBXNativeTarget "CMySignalAppTests" */;
-			buildPhases = (
-				A8F264B91B2670AC00CEC2EB /* Sources */,
-				A8F264BA1B2670AC00CEC2EB /* Frameworks */,
-				A8F264BB1B2670AC00CEC2EB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A8F264BF1B2670AC00CEC2EB /* PBXTargetDependency */,
-			);
-			name = CMySignalAppTests;
-			productName = CMySignalAppTests;
-			productReference = A8F264BD1B2670AC00CEC2EB /* CMySignalAppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -681,10 +893,6 @@
 				TargetAttributes = {
 					A8F264A31B2670AC00CEC2EB = {
 						CreatedOnToolsVersion = 6.3.2;
-					};
-					A8F264BC1B2670AC00CEC2EB = {
-						CreatedOnToolsVersion = 6.3.2;
-						TestTargetID = A8F264A31B2670AC00CEC2EB;
 					};
 				};
 			};
@@ -702,12 +910,43 @@
 			projectRoot = "";
 			targets = (
 				A8F264A31B2670AC00CEC2EB /* CMySignalApp */,
-				A8F264BC1B2670AC00CEC2EB /* CMySignalAppTests */,
+				A871F9781B32EA1000C0AC58 /* CMySignalAppW */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A871F9C01B32EA1000C0AC58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A871F9C11B32EA1000C0AC58 /* custom.png in Resources */,
+				A871F9C21B32EA1000C0AC58 /* background3.png in Resources */,
+				A871F9C31B32EA1000C0AC58 /* camera.png in Resources */,
+				A871F9C41B32EA1000C0AC58 /* tuijian.png in Resources */,
+				A871F9E41B32ECB200C0AC58 /* LaunchScreen.xib in Resources */,
+				A871F9C51B32EA1000C0AC58 /* background_blue.png in Resources */,
+				A871F9C61B32EA1000C0AC58 /* bg_blue_little.png in Resources */,
+				A871F9C71B32EA1000C0AC58 /* selectTabbar_bg_all1.png in Resources */,
+				A871F9C91B32EA1000C0AC58 /* tab_bg_all.png in Resources */,
+				A871F9CA1B32EA1000C0AC58 /* nav_bg_all.png in Resources */,
+				A871F9CB1B32EA1000C0AC58 /* start.png in Resources */,
+				A871F9CC1B32EA1000C0AC58 /* car002.png in Resources */,
+				A871F9CD1B32EA1000C0AC58 /* car001.png in Resources */,
+				A871F9E31B32ECB200C0AC58 /* Main.storyboard in Resources */,
+				A871F9CE1B32EA1000C0AC58 /* Delete.png in Resources */,
+				A871F9CF1B32EA1000C0AC58 /* face_girl.png in Resources */,
+				A871F9D01B32EA1000C0AC58 /* README-GHUnit in Resources */,
+				A871F9D11B32EA1000C0AC58 /* list.png in Resources */,
+				A871F9D31B32EA1000C0AC58 /* car003.png in Resources */,
+				A871F9D41B32EA1000C0AC58 /* Images.xcassets in Resources */,
+				A871F9D51B32EA1000C0AC58 /* user.png in Resources */,
+				A871F9D61B32EA1000C0AC58 /* msg_new.png in Resources */,
+				A871F9D71B32EA1000C0AC58 /* face_boy.png in Resources */,
+				A871F9D81B32EA1000C0AC58 /* worker.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A8F264A21B2670AC00CEC2EB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -723,11 +962,14 @@
 				A86E297C1B26D37F00B3B00B /* tab_bg_all.png in Resources */,
 				A86E297A1B26D37F00B3B00B /* nav_bg_all.png in Resources */,
 				A8545CC81B2A7F00009F2BF4 /* start.png in Resources */,
+				A890482D1B31992700346021 /* car002.png in Resources */,
+				A890482E1B31992700346021 /* car001.png in Resources */,
 				A8545CC61B2A7F00009F2BF4 /* Delete.png in Resources */,
 				A86E29781B26D37F00B3B00B /* face_girl.png in Resources */,
 				A80D0D771B292FC500FBF541 /* README-GHUnit in Resources */,
 				A8545CCD1B2A7F40009F2BF4 /* list.png in Resources */,
 				A8F264B81B2670AC00CEC2EB /* LaunchScreen.xib in Resources */,
+				A890482C1B31992700346021 /* car003.png in Resources */,
 				A8F264B51B2670AC00CEC2EB /* Images.xcassets in Resources */,
 				A8545CCA1B2A7F00009F2BF4 /* user.png in Resources */,
 				A86E29791B26D37F00B3B00B /* msg_new.png in Resources */,
@@ -736,16 +978,92 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A8F264BB1B2670AC00CEC2EB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A871F9791B32EA1000C0AC58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A871F97A1B32EA1000C0AC58 /* CMyNetWorkInterface.m in Sources */,
+				A871F97B1B32EA1000C0AC58 /* CMyWorkerDetailViewController.m in Sources */,
+				A871F97C1B32EA1000C0AC58 /* CMyUserTuijianParaments.m in Sources */,
+				A871F9F01B3306BE00C0AC58 /* CMyWorkerContendDetailViewController.m in Sources */,
+				A871F97D1B32EA1000C0AC58 /* CCMyASIDownloadCache.m in Sources */,
+				A871F97E1B32EA1000C0AC58 /* CMyUserLoginView.m in Sources */,
+				A871F97F1B32EA1000C0AC58 /* CMyFinishOrderParaments.m in Sources */,
+				A871F9801B32EA1000C0AC58 /* CMyWorkerInfoViewController.m in Sources */,
+				A871F9811B32EA1000C0AC58 /* ViewController.m in Sources */,
+				A871F9821B32EA1000C0AC58 /* MyMD5.m in Sources */,
+				A871F9ED1B32F89500C0AC58 /* CMyWorkerRefreshContendsParaments.m in Sources */,
+				A871F9831B32EA1000C0AC58 /* CMyReviewWorkerParaments.m in Sources */,
+				A871F9841B32EA1000C0AC58 /* SBJsonParser.m in Sources */,
+				A871F9851B32EA1000C0AC58 /* CMyGetMsgCodeParaments.m in Sources */,
+				A871F9861B32EA1000C0AC58 /* CCMyASIInputStream.m in Sources */,
+				A871F9871B32EA1000C0AC58 /* CMyTuijianDetailViewController.m in Sources */,
+				A871F9881B32EA1000C0AC58 /* CMyCreateOrderParaments.m in Sources */,
+				A871F9891B32EA1000C0AC58 /* CMyTableViewCell.m in Sources */,
+				A871F9FC1B33196A00C0AC58 /* CMyWorkerCancelOrderParaments.m in Sources */,
+				A871F9F61B3313D000C0AC58 /* CMyWorkerLoadOrderParaments.m in Sources */,
+				A871F98A1B32EA1000C0AC58 /* CMyServerParaments.m in Sources */,
+				A871F98B1B32EA1000C0AC58 /* CMyUserInfoViewController.m in Sources */,
+				09154E321B345FB000E5BE0D /* CMyUserConfirmOrderParaments.m in Sources */,
+				A871F9EA1B32F6B000C0AC58 /* CMyWorkerParaments.m in Sources */,
+				A871F98C1B32EA1000C0AC58 /* CMyUserLogoutParaments.m in Sources */,
+				A871F98D1B32EA1000C0AC58 /* SBJsonBase.m in Sources */,
+				A871F98E1B32EA1000C0AC58 /* UIViewExt.m in Sources */,
+				A871F98F1B32EA1000C0AC58 /* CMyUserLogingViewController.m in Sources */,
+				A871F9901B32EA1000C0AC58 /* CMyUserLoginParements.m in Sources */,
+				A871F9911B32EA1000C0AC58 /* CMyUserHistoryViewControler.m in Sources */,
+				A871F9921B32EA1000C0AC58 /* AppDelegate.m in Sources */,
+				A871F9931B32EA1000C0AC58 /* CCMyKOpenUDID.m in Sources */,
+				A871F9941B32EA1000C0AC58 /* CCMyASIFormDataRequest.m in Sources */,
+				A871F9951B32EA1000C0AC58 /* MainViewControler.m in Sources */,
+				A871F9961B32EA1000C0AC58 /* CMyOrderCreateViewController.m in Sources */,
+				A871F9971B32EA1000C0AC58 /* CCMyReachability.m in Sources */,
+				A871F9981B32EA1000C0AC58 /* CMyWorkerOrderListViewController.m in Sources */,
+				A871F9991B32EA1000C0AC58 /* SBJSON.m in Sources */,
+				A871F9E71B32F4E900C0AC58 /* CMyWorkerDefaultViewController.m in Sources */,
+				A871F99A1B32EA1000C0AC58 /* NSData+Base64.m in Sources */,
+				A871F99B1B32EA1000C0AC58 /* CCMyASIAuthenticationDialog.m in Sources */,
+				A871F99C1B32EA1000C0AC58 /* CMyUserRegisterView.m in Sources */,
+				A871F99D1B32EA1000C0AC58 /* CMyUserLoadordersParaments.m in Sources */,
+				A871F99E1B32EA1000C0AC58 /* CMyOrderDetailViewController.m in Sources */,
+				A871F99F1B32EA1000C0AC58 /* CCMySecurity.m in Sources */,
+				A871F9A01B32EA1000C0AC58 /* CCMyASIDataDecompressor.m in Sources */,
+				A871F9A11B32EA1000C0AC58 /* CMyContendViewController.m in Sources */,
+				A871F9F31B330C3D00C0AC58 /* CMyWorkerConfirmContendParaments.m in Sources */,
+				A871F9A21B32EA1000C0AC58 /* CMyUserInfoDetailView.m in Sources */,
+				A871F9A31B32EA1000C0AC58 /* SBJsonWriter.m in Sources */,
+				A871F9A41B32EA1000C0AC58 /* CCMyASIDataCompressor.m in Sources */,
+				A871F9A51B32EA1000C0AC58 /* CMyLoadProductsParaments.m in Sources */,
+				A871F9A61B32EA1000C0AC58 /* ItemView.m in Sources */,
+				A871F9A71B32EA1000C0AC58 /* CMyOrderDetailParaments.m in Sources */,
+				A871F9A81B32EA1000C0AC58 /* CMyLocalDatas.m in Sources */,
+				A871F9A91B32EA1000C0AC58 /* CMyBeginOrderParaments.m in Sources */,
+				A871F9AA1B32EA1000C0AC58 /* CMyRefreshTokenParaments.m in Sources */,
+				A871F9AB1B32EA1000C0AC58 /* CMyUserDefaultViewControler.m in Sources */,
+				A871F9AC1B32EA1000C0AC58 /* CMyWorkerTuijianParaments.m in Sources */,
+				A871F9AD1B32EA1000C0AC58 /* CMyServerResultData.m in Sources */,
+				A871F9AE1B32EA1000C0AC58 /* CMyLoadServiceParaments.m in Sources */,
+				A871F9AF1B32EA1000C0AC58 /* CCMyASINetworkQueue.m in Sources */,
+				A871F9B01B32EA1000C0AC58 /* ModuleViewBaseViewController.m in Sources */,
+				A871F9B11B32EA1000C0AC58 /* NSObject+SBJSON.m in Sources */,
+				A871F9B21B32EA1000C0AC58 /* CMyUserWorkerViewController.m in Sources */,
+				A871F9E21B32EC5700C0AC58 /* CMyWorkerLogingViewController.m in Sources */,
+				A871F9B31B32EA1000C0AC58 /* CMyTestCreateworkers.m in Sources */,
+				A871F9B41B32EA1000C0AC58 /* BaseNavigationViewController.m in Sources */,
+				A871F9B51B32EA1000C0AC58 /* main.m in Sources */,
+				A871F9B61B32EA1000C0AC58 /* CMyReviewOrderViewController.m in Sources */,
+				A871F9B71B32EA1000C0AC58 /* NSString+SBJSON.m in Sources */,
+				A871F9B81B32EA1000C0AC58 /* CMyLoadWorkersParaments.m in Sources */,
+				A871F9F91B33184D00C0AC58 /* CMyWorkerOrderDetailViewController.m in Sources */,
+				A871F9B91B32EA1000C0AC58 /* CMyUserRegisterParaments.m in Sources */,
+				A871F9BA1B32EA1000C0AC58 /* CCMyASIHTTPRequest.m in Sources */,
+				A871F9BB1B32EA1000C0AC58 /* CMyUserCancelOrderParaments.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A8F264A01B2670AC00CEC2EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -755,24 +1073,32 @@
 				0960D27C1B2DA9B7002B765C /* CMyUserTuijianParaments.m in Sources */,
 				A80D0D721B292FC500FBF541 /* CCMyASIDownloadCache.m in Sources */,
 				A86F86521B287F6800D0E1D9 /* CMyUserLoginView.m in Sources */,
+				A890483D1B31C46A00346021 /* CMyFinishOrderParaments.m in Sources */,
 				A80D0D971B297F3D00FBF541 /* CMyWorkerInfoViewController.m in Sources */,
 				A8F264B01B2670AC00CEC2EB /* ViewController.m in Sources */,
-				A8545CD71B2AAB0B009F2BF4 /* CMyTableViewCellView.m in Sources */,
 				A80D0D801B292FC500FBF541 /* MyMD5.m in Sources */,
+				09154E2E1B345F3F00E5BE0D /* CMyWorkerRefreshContendsParaments.m in Sources */,
+				A89048431B31C63400346021 /* CMyReviewWorkerParaments.m in Sources */,
 				A80D0D7D1B292FC500FBF541 /* SBJsonParser.m in Sources */,
 				A80D0D841B292FC500FBF541 /* CMyGetMsgCodeParaments.m in Sources */,
 				A80D0D751B292FC500FBF541 /* CCMyASIInputStream.m in Sources */,
 				0960D27F1B2DB9B8002B765C /* CMyTuijianDetailViewController.m in Sources */,
+				A89048281B316EDF00346021 /* CMyCreateOrderParaments.m in Sources */,
 				A86F86401B27D3F700D0E1D9 /* CMyTableViewCell.m in Sources */,
 				A80D0D861B292FC500FBF541 /* CMyServerParaments.m in Sources */,
 				A86E296C1B26D08D00B3B00B /* CMyUserInfoViewController.m in Sources */,
+				0948AA281B2F0BB1006F6F6D /* CMyUserLogoutParaments.m in Sources */,
 				A80D0D7C1B292FC500FBF541 /* SBJsonBase.m in Sources */,
 				A86E29821B26D3E300B3B00B /* UIViewExt.m in Sources */,
+				A89048191B31003600346021 /* CMyUserLogingViewController.m in Sources */,
+				0948AA251B2F0784006F6F6D /* CMyUserLoginParements.m in Sources */,
 				A86E29661B26D06100B3B00B /* CMyUserHistoryViewControler.m in Sources */,
 				A8F264AD1B2670AC00CEC2EB /* AppDelegate.m in Sources */,
 				A80D0D821B292FC500FBF541 /* CCMyKOpenUDID.m in Sources */,
 				A80D0D731B292FC500FBF541 /* CCMyASIFormDataRequest.m in Sources */,
 				A8F264D41B2671FE00CEC2EB /* MainViewControler.m in Sources */,
+				A89048221B314C4F00346021 /* CMyOrderCreateViewController.m in Sources */,
+				09154E2B1B345C2000E5BE0D /* CMyUserConfirmOrderParaments.m in Sources */,
 				A80D0D781B292FC500FBF541 /* CCMyReachability.m in Sources */,
 				A80D0D941B297F0C00FBF541 /* CMyWorkerOrderListViewController.m in Sources */,
 				A80D0D7B1B292FC500FBF541 /* SBJSON.m in Sources */,
@@ -780,50 +1106,45 @@
 				A80D0D6F1B292FC500FBF541 /* CCMyASIAuthenticationDialog.m in Sources */,
 				A86F864E1B28678A00D0E1D9 /* CMyUserRegisterView.m in Sources */,
 				0960D2851B2DCCBE002B765C /* CMyUserLoadordersParaments.m in Sources */,
-				A86F86471B28026700D0E1D9 /* CMyCreateOderViewController.m in Sources */,
 				A86F864A1B281E1500D0E1D9 /* CMyOrderDetailViewController.m in Sources */,
 				A80D0D7F1B292FC500FBF541 /* CCMySecurity.m in Sources */,
 				A80D0D711B292FC500FBF541 /* CCMyASIDataDecompressor.m in Sources */,
 				A80D0D9A1B297F7200FBF541 /* CMyContendViewController.m in Sources */,
 				A80D0D911B295D1600FBF541 /* CMyUserInfoDetailView.m in Sources */,
 				A80D0D7E1B292FC500FBF541 /* SBJsonWriter.m in Sources */,
+				09154E301B345F7E00E5BE0D /* CMyWorkerConfirmContendParaments.m in Sources */,
+				09154E2F1B345F6100E5BE0D /* CMyWorkerParaments.m in Sources */,
 				A80D0D701B292FC500FBF541 /* CCMyASIDataCompressor.m in Sources */,
+				A89048311B31B20900346021 /* CMyLoadProductsParaments.m in Sources */,
 				A86E297F1B26D3C400B3B00B /* ItemView.m in Sources */,
+				A89048401B31C51300346021 /* CMyOrderDetailParaments.m in Sources */,
 				A80D0D8B1B2930CD00FBF541 /* CMyLocalDatas.m in Sources */,
+				A890483A1B31C16000346021 /* CMyBeginOrderParaments.m in Sources */,
+				09154E2C1B345EF700E5BE0D /* CMyWorkerContendDetailViewController.m in Sources */,
 				A80D0D851B292FC500FBF541 /* CMyRefreshTokenParaments.m in Sources */,
-				A8545CD41B2AA90C009F2BF4 /* CMyTableView.m in Sources */,
+				09154E2D1B345F2D00E5BE0D /* CMyWorkerLoadOrderParaments.m in Sources */,
 				A86E29631B26D03C00B3B00B /* CMyUserDefaultViewControler.m in Sources */,
+				09154E311B345F8E00E5BE0D /* CMyWorkerDefaultViewController.m in Sources */,
 				0960D2791B2DA75E002B765C /* CMyWorkerTuijianParaments.m in Sources */,
 				A80D0D881B292FC500FBF541 /* CMyServerResultData.m in Sources */,
+				A89048341B31B69600346021 /* CMyLoadServiceParaments.m in Sources */,
 				A80D0D761B292FC500FBF541 /* CCMyASINetworkQueue.m in Sources */,
+				A890481C1B31093600346021 /* ModuleViewBaseViewController.m in Sources */,
 				A80D0D791B292FC500FBF541 /* NSObject+SBJSON.m in Sources */,
 				A86E29691B26D07C00B3B00B /* CMyUserWorkerViewController.m in Sources */,
+				09D3161A1B30743F004ABB3B /* CMyTestCreateworkers.m in Sources */,
 				A86E296F1B26D22800B3B00B /* BaseNavigationViewController.m in Sources */,
 				A8F264AA1B2670AC00CEC2EB /* main.m in Sources */,
+				A89048251B314C8500346021 /* CMyReviewOrderViewController.m in Sources */,
 				A80D0D7A1B292FC500FBF541 /* NSString+SBJSON.m in Sources */,
 				0960D2821B2DBE92002B765C /* CMyLoadWorkersParaments.m in Sources */,
 				A80D0D871B292FC500FBF541 /* CMyUserRegisterParaments.m in Sources */,
 				A80D0D741B292FC500FBF541 /* CCMyASIHTTPRequest.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A8F264B91B2670AC00CEC2EB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A8F264C41B2670AC00CEC2EB /* CMySignalAppTests.m in Sources */,
+				A89048371B31BD2500346021 /* CMyUserCancelOrderParaments.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A8F264BF1B2670AC00CEC2EB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A8F264A31B2670AC00CEC2EB /* CMySignalApp */;
-			targetProxy = A8F264BE1B2670AC00CEC2EB /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A8F264B11B2670AC00CEC2EB /* Main.storyboard */ = {
@@ -845,6 +1166,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A871F9DA1B32EA1000C0AC58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jin Shang (BB2E7PESLY)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"__USER__=1",
+					"__WORKER__=2",
+					"__TYPE__=__WORKER__",
+				);
+				INFOPLIST_FILE = CMySignalApp/CMySignalAppW.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "CMySignalApp copy";
+				PROVISIONING_PROFILE = "ab467f7f-d359-41ca-a708-0c48179ecca7";
+			};
+			name = Debug;
+		};
+		A871F9DB1B32EA1000C0AC58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jin Shang (BB2E7PESLY)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"__WORKER__=2",
+					"__USER__=1",
+					"__TYPE__=__WORKER__",
+				);
+				INFOPLIST_FILE = CMySignalApp/CMySignalAppW.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "CMySignalApp copy";
+				PROVISIONING_PROFILE = "ab467f7f-d359-41ca-a708-0c48179ecca7";
+			};
+			name = Release;
+		};
 		A8F264C51B2670AC00CEC2EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -873,6 +1230,8 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					"__USER__=1",
+					"__WORKER__=2",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -912,6 +1271,10 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"__WORKER__=2",
+					"__USER__=1",
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -929,9 +1292,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jin Shang (BB2E7PESLY)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"__USER__=1",
+					"__WORKER__=2",
+					"__TYPE__=__USER__",
+				);
 				INFOPLIST_FILE = CMySignalApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ab467f7f-d359-41ca-a708-0c48179ecca7";
 			};
 			name = Debug;
 		};
@@ -939,49 +1311,31 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jin Shang (BB2E7PESLY)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"__WORKER__=2",
+					"__USER__=1",
+					"__TYPE__=__USER__",
+				);
 				INFOPLIST_FILE = CMySignalApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		A8F264CB1B2670AC00CEC2EB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CMySignalAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CMySignalApp.app/CMySignalApp";
-			};
-			name = Debug;
-		};
-		A8F264CC1B2670AC00CEC2EB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CMySignalAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CMySignalApp.app/CMySignalApp";
+				PROVISIONING_PROFILE = "ab467f7f-d359-41ca-a708-0c48179ecca7";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A871F9D91B32EA1000C0AC58 /* Build configuration list for PBXNativeTarget "CMySignalAppW" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A871F9DA1B32EA1000C0AC58 /* Debug */,
+				A871F9DB1B32EA1000C0AC58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A8F2649F1B2670AC00CEC2EB /* Build configuration list for PBXProject "CMySignalApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -996,15 +1350,6 @@
 			buildConfigurations = (
 				A8F264C81B2670AC00CEC2EB /* Debug */,
 				A8F264C91B2670AC00CEC2EB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A8F264CA1B2670AC00CEC2EB /* Build configuration list for PBXNativeTarget "CMySignalAppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A8F264CB1B2670AC00CEC2EB /* Debug */,
-				A8F264CC1B2670AC00CEC2EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

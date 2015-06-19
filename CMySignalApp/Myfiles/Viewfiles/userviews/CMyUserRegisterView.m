@@ -9,6 +9,10 @@
 #import "CMyUserRegisterView.h"
 
 #import "CMyNetWorkInterface.h"
+#import "CMyUserRegisterParaments.h"
+
+#import "MainViewControler.h"
+#import "CMyLocalDatas.h"
 
 
 @implementation CMyUserRegisterView
@@ -55,12 +59,12 @@
     plableusertype = [ [UILabel alloc] init ];
     [ plableusertype setText:@"用户类型:" ];
     [ plableusertype setTextAlignment:NSTextAlignmentRight ];
-    [ self addSubview:plableusertype ];
+//    [ self addSubview:plableusertype ];
 
     plabletypedesc = [ [UILabel alloc] init ];
     [ plabletypedesc setText:@"点击更改用户" ];
     [ plabletypedesc setTextAlignment:NSTextAlignmentRight ];
-    [ self addSubview:plabletypedesc ];
+//    [ self addSubview:plabletypedesc ];
     
     ptextusername = [ [UITextField alloc] init ];
     [ ptextusername setTextAlignment:NSTextAlignmentLeft ];
@@ -89,7 +93,7 @@
     [ pbtusertype setBackgroundImage:[ UIImage imageNamed:@"nav_bg_all" ] forState:UIControlStateNormal ];
     [ pbtusertype addTarget:self action:@selector(ClickUserType:) forControlEvents:UIControlEventTouchUpInside ];
     [ pbtusertype setSelected:NO ];
-    [ self addSubview:pbtusertype ];
+//    [ self addSubview:pbtusertype ];
     
     CGRect namerect1 = CGRectMake(lx, ly, llablewidth, llableheight);
     [ plableusername setFrame:namerect1 ];
@@ -111,12 +115,6 @@
     [ plabletypedesc setFrame:typerect3 ];
     
     ly = ly + 40 + lheightspace;
-    
-    /*
-    UILabel*        plablemsgcode;
-    UITextField*    ptextmsgcode;
-    UIButton*       pbtmsgcode;
-    */
     
     plablemsgcode = [ [UILabel alloc] init ];
     [ plablemsgcode setText:@"验证码:" ];
@@ -193,7 +191,8 @@
     [ self closeinput ];
     [ atimer invalidate ];
     
-    [ puserviewdelegate BtClickCancel:sender ];
+    MainViewControler* pmainview = [ [MainViewControler alloc] init ];
+    self.window.rootViewController = pmainview;
 }
 
 -(void) ClickSubmit:(id)sender
@@ -201,7 +200,59 @@
     [ self closeinput ];
     [ atimer invalidate ];
     
-    [ puserviewdelegate BTClickSubmit:sender ];
+    NSString* sphone = [ NSString stringWithFormat:@"%@", ptextusername.text ];
+    NSString* spwd = [NSString stringWithFormat:@"%@", ptextuserpwd.text ];
+//    NSString* stype = [ NSString stringWithFormat:@"1" ];
+    NSString* scode = [ NSString stringWithFormat:@"%@", ptextmsgcode.text ];
+    
+#if (__TYPE__==__USER__)
+    NSString* stype = [ NSString stringWithFormat:@"1" ];
+#else if( __TYPE__==__WORKER__ )
+    NSString* stype = [ NSString stringWithFormat:@"2" ];
+#endif
+    
+    CMyUserRegisterParaments* pregister = [ [CMyUserRegisterParaments alloc] initWithData:sphone pwd:spwd code:scode type:stype ];
+    NSString* sret = [ [CMyNetWorkInterface SharedNetWork] UserRegister:[ pregister GetServerInterfaceParamens ] ];
+    
+    CMyServerResultData* pserverresult = [ [CMyServerResultData alloc] initWithResultData:sret ];
+
+    if ([ pserverresult GetResult ])
+    {
+        NSString* stoken = [ NSString stringWithString:[ pserverresult GetToken ] ];
+        NSDictionary* pdata     = [ pserverresult GetResultData ];
+        NSString* suserphone    = [ pdata objectForKey:UserMobile ];
+        NSString* susertype     = [ pdata objectForKey:UserType ];
+        NSString* suserid       = [ pdata objectForKey:UserID ];
+        NSString* susername     = [ pdata objectForKey:UserName ];
+        NSString* suserstatus   = [ pdata objectForKey:UserStatus ];
+        NSString* suseraddress  = [ pdata objectForKey:UserAddress ];
+        
+        [ [CMyLocalDatas SharedLocalDatas] setlocaluserstatus:suserstatus];
+        [ [CMyLocalDatas SharedLocalDatas] setlocaluseraddress:suseraddress];
+        [ [CMyLocalDatas SharedLocalDatas] setlocalusernickname:susername ];
+        [ [CMyLocalDatas SharedLocalDatas] setlocaluserphone:suserphone ];
+        [ [CMyLocalDatas SharedLocalDatas] setlocaltoken:stoken ];
+        [ [CMyLocalDatas SharedLocalDatas] setlocaluserid:suserid ];
+        [ [CMyLocalDatas SharedLocalDatas] setlocalusertype:[ susertype integerValue ] ];
+        
+        [ [CMyLocalDatas SharedLocalDatas] savelocalinfo ];
+        /*
+        NSDictionary* puserinfo = (NSDictionary*)[ pserverresult GetResultData ];
+        [ [CMyLocalDatas SharedLocalDatas] setlocaltoken:[ NSString stringWithFormat:@"%@", [ puserinfo objectForKey:@"token" ] ] ];
+        [ [CMyLocalDatas SharedLocalDatas] setlocalusertype:[ stype integerValue ] ];
+        [ [CMyLocalDatas SharedLocalDatas] setlocaluserphone:[ NSString stringWithFormat:@"%@", [ puserinfo objectForKey:@"mobile" ] ] ];
+        [ [CMyLocalDatas SharedLocalDatas] setlocaluserid:[ NSString stringWithFormat:@"%@", [ puserinfo objectForKey:@"customer_id" ] ] ];
+        [ [CMyLocalDatas SharedLocalDatas ] savelocalinfo ];
+        */
+        NSLog(@"rgister success");
+    }
+    else
+    {
+        NSLog(@"rgister failed");
+    }
+    
+    MainViewControler* pmainview = [ [MainViewControler alloc] init ];
+    self.window.rootViewController = pmainview;
 }
 
 -(void) ClickUserType:(id)sender
@@ -232,9 +283,15 @@
     atimer = [ NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(Enablemsgcodebt) userInfo:nil repeats:YES ];
     [[NSRunLoop currentRunLoop]addTimer:atimer forMode:NSDefaultRunLoopMode];
     
-    NSString* sphone = [ ptextusername text ];
+    NSString* sphone = @"17792039701";//[ ptextusername text ];
     
-    CMyGetMsgCodeParaments* pmsgcodeparaments = [ [CMyGetMsgCodeParaments alloc] initWithData:sphone type:@"0" ];
+#if (__TYPE__==__USER__)
+    NSString* stype = [ NSString stringWithFormat:@"1" ];
+#else if( __TYPE__==__WORKER__ )
+    NSString* stype = [ NSString stringWithFormat:@"2" ];
+#endif
+    
+    CMyGetMsgCodeParaments* pmsgcodeparaments = [ [CMyGetMsgCodeParaments alloc] initWithData:sphone type:stype ];
     NSString* sret = [ [CMyNetWorkInterface SharedNetWork] UserMsgCode:[ pmsgcodeparaments GetServerInterfaceParamens ] ];
     CMyServerResultData* presult = [ [CMyServerResultData alloc] initWithResultData:sret ];
     if ([presult GetResult] == SERVER_RESULT_SUCC)

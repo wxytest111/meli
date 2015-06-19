@@ -8,6 +8,9 @@
 
 #import "CMyWorkerOrderListViewController.h"
 
+#import "CMyNetWorkInterface.h"
+
+
 @interface CMyWorkerOrderListViewController ()
 
 @end
@@ -19,8 +22,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-//        self.title = @"我的订单";
-        self.title = @"抢单333333333";
+        self.title = @"我的担子";
     }
     return self;
 }
@@ -40,20 +42,39 @@
     [ ptableview setDelegate:self ];
     [ ptableview setDataSource:self ];
     [ self.view addSubview:ptableview ];
-    [ ptableview setSeparatorStyle:UITableViewCellSeparatorStyleNone ];
+    [ ptableview setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine ];
     
-    [ self loadworkerorderlist ];
+    [ self loadworkercontends ];
     // Do any additional setup after loading the view.
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [ super viewWillAppear:animated ];
+    [ self loadworkercontends ];
+    [ ptableview reloadData ];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [ super viewWillDisappear:animated ];
+}
+
+-(void) loadworkercontends
+{
+    CMyWorkerLoadOrderParaments* ploadorders = [ [CMyWorkerLoadOrderParaments alloc] initWithData:@"1" ];
+    NSString* sret = [ [CMyNetWorkInterface SharedNetWork] WorkerOrders:[ ploadorders GetServerInterfaceParamens ] ];
+    CMyServerResultData* presult = [ [CMyServerResultData alloc] initWithResultData:sret ];
+    if ([ presult GetResult ])
+    {
+        pworkerorderlist = [ [NSMutableArray alloc] initWithArray:[ presult GetResultData ] ];
+        NSLog(@"load order success");
+    }
+    else
+    {
+        NSLog(@"load order failed");
+    }
+    
 }
 
 -(void) loadworkerorderlist
@@ -126,6 +147,69 @@
     
     NSDictionary* porder = [ pworkerorderlist objectAtIndex:indexPath.row ];
     
+    
+    NSString* sdate = [ NSString stringWithFormat:@"%@", [porder objectForKey:@"date"] ];
+    NSString* sdate1 = [ NSString stringWithFormat:@"%@", [porder objectForKey:@"start_time"] ];
+    NSString* sdate2 = [ NSString stringWithFormat:@"%@", [porder objectForKey:@"end_time"] ];
+    
+    NSString*   saddress = [ NSString stringWithFormat:@"%@", [porder objectForKey:@"address"] ];
+    NSString*   stimerange = [ NSString stringWithFormat:@"%@ %@--%@", sdate, sdate1, sdate2 ];
+    
+    NSDictionary* pcustomer = [porder objectForKey:@"customer"];
+    NSString*   susername = [ NSString stringWithFormat:@"%@", [pcustomer objectForKey:@"nick_name"] ];
+    
+    NSString*   sstatuss = [ NSString stringWithFormat:@"%@", [ porder objectForKey:@"status" ] ];
+    
+    if (!cell)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier];
+        CGRect arect = CGRectMake(2, 2, cell.contentView.frame.size.width-2*2, cell.contentView.frame.size.height-2*2);
+        
+        CGRect adsrect = CGRectMake(10 , 5, arect.size.width-20, 20);
+        UILabel* paddress = [ [UILabel alloc] initWithFrame:adsrect ];
+        [ cell.contentView addSubview:paddress ];
+        [ paddress setText:saddress ];
+        [ paddress setTextAlignment:NSTextAlignmentLeft ];
+        [ paddress setTag:101 ];
+        
+        CGRect timerect = CGRectMake(10, adsrect.origin.y + adsrect.size.height + 5, arect.size.width-20, 20);
+        UILabel* ptime = [ [UILabel alloc] initWithFrame:timerect ];
+        [ cell.contentView addSubview:ptime ];
+        [ ptime setText:stimerange ];
+        [ ptime setTextAlignment:NSTextAlignmentLeft ];
+        [ ptime setTag:102 ];
+        
+        CGRect userrect = CGRectMake(10, timerect.origin.y + timerect.size.height + 5, (arect.size.width-30)*0.5, 20);
+        UILabel* puser = [ [UILabel alloc] initWithFrame:userrect ];
+        [ cell.contentView addSubview:puser ];
+        [ puser setText:susername ];
+        [ puser setTextAlignment:NSTextAlignmentLeft ];
+        [ puser setTag:103 ];
+        
+        CGRect statusrect = CGRectMake(userrect.origin.x+userrect.size.width + 10, userrect.origin.y, userrect.size.width, 20);
+        UILabel* pstatus = [ [UILabel alloc] initWithFrame:statusrect ];
+        [ cell.contentView addSubview:pstatus ];
+        [ pstatus setText:sstatuss ];
+        [ pstatus setTextColor:[ UIColor redColor ] ];
+        [ pstatus setTextAlignment:NSTextAlignmentLeft ];
+        [ pstatus setTag:104 ];
+    }
+    else
+    {
+        UILabel* paddress = (UILabel*)[ cell.contentView viewWithTag:101 ];
+        [ paddress setText:saddress ];
+        
+        UILabel* ptime = (UILabel*)[ cell.contentView viewWithTag:102 ];
+        [ ptime setText:stimerange ];
+        
+        UILabel* puser = (UILabel*)[ cell.contentView viewWithTag:103 ];
+        [ puser setText:susername ];
+        
+        UILabel* postatus = (UILabel*)[ cell.contentView viewWithTag:104 ];
+        [ postatus setText:sstatuss ];
+    }
+    
+    /*
     NSString* sstatus = [ self getstatusdesc:[[ porder objectForKey:@"status" ] integerValue] ];
     
     if (!cell)
@@ -169,7 +253,7 @@
         UILabel* pstatus = (UILabel*)[ cell.contentView viewWithTag:103 ];
         [ pstatus setText:sstatus];
     }
-    
+    */
     return cell;
 }
 
@@ -187,7 +271,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSInteger lheight = 60;
+    NSInteger lheight = 80;
     return lheight;
 }
 

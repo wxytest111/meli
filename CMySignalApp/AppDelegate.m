@@ -11,6 +11,10 @@
 #import "CMyLocalDatas.h"
 
 #import "MainViewControler.h"
+#import "CMyUserLogingViewController.h"
+#import "CMyWorkerLogingViewController.h"
+
+#import "CMyTestCreateworkers.h"
 
 
 @interface AppDelegate ()
@@ -29,10 +33,45 @@
 
     [ self.window makeKeyAndVisible ];
     
-    [ CMyLocalDatas SharedLocalDatas];
+//    CMyTestCreateworkers* ptest = [ [CMyTestCreateworkers alloc] init ];
+    if ([ [CMyLocalDatas SharedLocalDatas] getlocallogined ])
+    {
+        [ self showoperateview ];
+    }
+    else
+    {
+        [ self showloginview ];
+    }
     
+//    NSString* suserid = [ [CMyLocalDatas SharedLocalDatas] getlocaluserid ];
+//    NSLog(@"userid:%@", suserid);
+//    if (suserid == nil || [ suserid length ] <1 || [suserid isEqualToString:@"(null)"] )
+//    {
+//        [ self showloginview ];
+//    }
+//    else
+//    {
+//        [ self showoperateview ];
+//    }
     
     return YES;
+}
+
+-(void) showloginview
+{
+#if (__TYPE__==__USER__)
+    CMyUserLogingViewController* ploginview = [ [CMyUserLogingViewController alloc] init ];
+    self.window.rootViewController = ploginview;
+#else if (__TYPE__==__WORKER__)
+    CMyWorkerLogingViewController* ploginview = [ [CMyWorkerLogingViewController alloc] init ];
+    self.window.rootViewController = ploginview;
+#endif
+}
+
+-(void) showoperateview
+{
+    MainViewControler* pmainview = [ [MainViewControler alloc] init ];
+    self.window.rootViewController = pmainview;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

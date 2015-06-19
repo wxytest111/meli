@@ -41,7 +41,7 @@
     [ pretdic setValue:suserphone  forKey:USER_REGISTER_PARA_USERPHONE ];
     [ pretdic setValue:suserpwd    forKey:USER_REGISTER_PARA_USERPWD ];
     [ pretdic setValue:smsgcode    forKey:USER_REGISTER_PARA_MSGCODE ];
-    [ pretdic setValue:susertype   forKey:USER_TOKEN_PARA_USERTYPE ];
+    [ pretdic setValue:susertype   forKey:USER_REGISTER_PARA_USERTYPE ];
     return (NSDictionary*)pretdic;
 }
 

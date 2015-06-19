@@ -55,6 +55,12 @@ CMyLocalDatas*      g_localdatas;
     }
 }
 
+-(void)     cleanlocalinfos
+{
+    [m_plocalInfodic removeAllObjects];
+    [ self savelocalinfo ];
+}
+
 -(void)      loginwithyouke
 {
     while (0)
@@ -99,14 +105,56 @@ CMyLocalDatas*      g_localdatas;
     [ pdata writeToFile:sfilename atomically:YES ];
 }
 
+-(BOOL)      getlocallogined
+{
+    BOOL bret = YES;
+    NSString* suserid = [ [CMyLocalDatas SharedLocalDatas] getlocaluserid ];
+    if (suserid == nil || [ suserid length ] <1 || [suserid isEqualToString:@"(null)"] )
+    {
+        bret = NO;
+    }
+
+    return bret;
+}
+
 -(NSString*) getlocaluserid
 {
-    return [ m_plocalInfodic objectForKey:LOCAL_USERID_KEY ];
+    return [ NSString stringWithFormat:@"%@", [m_plocalInfodic objectForKey:LOCAL_USERID_KEY ]];
 }
 
 -(void)      setlocaluserid:(NSString*)suserid
 {
-    [  m_plocalInfodic setObject:suserid forKey:LOCAL_USERID_KEY];
+    [ m_plocalInfodic setObject:suserid forKey:LOCAL_USERID_KEY];
+}
+
+-(NSString*) getlocaluserphone
+{
+    return [ NSString stringWithFormat:@"%@", [ m_plocalInfodic objectForKey:LOCAL_USERPHONE_KEY ] ];
+}
+
+-(void)      setlocaluserphone:(NSString*)sphone
+{
+    [ m_plocalInfodic setObject:sphone forKey:LOCAL_USERPHONE_KEY];
+}
+
+-(NSString*) getlocalusernickname
+{
+    return [ NSString stringWithFormat:@"%@", [ m_plocalInfodic objectForKey:LOCAL_NICKNAME_KEY ] ];
+}
+
+-(void)      setlocalusernickname:(NSString*)sphone
+{
+    [ m_plocalInfodic setObject:sphone forKey:LOCAL_NICKNAME_KEY];
+}
+
+-(NSString*) getlocaluseraddress
+{
+    return [ NSString stringWithFormat:@"%@", [ m_plocalInfodic objectForKey:LOCAL_ADDRESS_KEY ] ];
+}
+
+-(void)      setlocaluseraddress:(NSString*)sphone
+{
+    [ m_plocalInfodic setObject:sphone forKey:LOCAL_ADDRESS_KEY];
 }
 
 -(NSString*) getlocaltoken
@@ -121,7 +169,7 @@ CMyLocalDatas*      g_localdatas;
 
 -(NSString*) getlocaluserstype
 {
-    return [ m_plocalInfodic objectForKey:LOCAL_USERTYPE_KEY ];
+    return [ NSString stringWithFormat:@"%@", [ m_plocalInfodic objectForKey:LOCAL_USERTYPE_KEY ] ];
 }
 
 -(NSInteger) getlocalusertype
@@ -152,9 +200,19 @@ CMyLocalDatas*      g_localdatas;
     [  m_plocalInfodic setObject:suserlevel forKey:LOCAL_USERLEVEL_KEY];
 }
 
+-(NSString*) getlocaluserstatus
+{
+    return [ m_plocalInfodic objectForKey:LOCAL_STATUS_KEY ];
+}
+
+-(void)      setlocaluserstatus:(NSString*)suserstatus
+{
+    [  m_plocalInfodic setObject:suserstatus forKey:LOCAL_STATUS_KEY];
+}
+
 -(void) loadlocalinfo
 {
-    [ self Loadfile:[ self getlocalinfofilename ] ];
+    m_plocalInfodic = [ self Loadfile:[ self getlocalinfofilename ] ];
 }
 
 -(void) savelocalinfo

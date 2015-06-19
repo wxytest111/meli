@@ -10,11 +10,14 @@
 
 #import "globaldefine.h"
 
+#define LOCAL_USERPHONE_KEY         @"userphone"
 #define LOCAL_USERID_KEY            @"userid"
 #define LOCAL_TOKEN_KEY             @"token"
 #define LOCAL_USERLEVEL_KEY         @"userlevel"
 #define LOCAL_USERTYPE_KEY          @"usertype"
-
+#define LOCAL_NICKNAME_KEY          @"nickname"
+#define LOCAL_ADDRESS_KEY           @"address"
+#define LOCAL_STATUS_KEY            @"status"
 
 @interface CMyLocalDatas : NSObject
 {
@@ -36,8 +39,21 @@
 -(void) savelocalinfo;
 -(NSMutableDictionary*) GetLocalInfo;
 
+-(void)     cleanlocalinfos;
+
+-(BOOL)      getlocallogined;
+
 -(NSString*) getlocaluserid;
 -(void)      setlocaluserid:(NSString*)suserid;
+
+-(NSString*) getlocaluserphone;
+-(void)      setlocaluserphone:(NSString*)sphone;
+
+-(NSString*) getlocalusernickname;
+-(void)      setlocalusernickname:(NSString*)sphone;
+
+-(NSString*) getlocaluseraddress;
+-(void)      setlocaluseraddress:(NSString*)sphone;
 
 -(NSString*) getlocaltoken;
 -(void)      setlocaltoken:(NSString*)stoken;
@@ -48,6 +64,9 @@
 
 -(NSString*) getlocaluserlevel;
 -(void)      setlocaluserlevel:(NSString*)suserlevel;
+
+-(NSString*) getlocaluserstatus;
+-(void)      setlocaluserstatus:(NSString*)suserstatus;
 
 -(void)      loginwithyouke;
 

@@ -8,6 +8,11 @@
 
 #import "CMyContendViewController.h"
 
+#import "CMyNetWorkInterface.h"
+
+#import "CMyWorkerContendDetailViewController.h"
+
+
 @interface CMyContendViewController ()
 
 @end
@@ -19,8 +24,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-//        self.title = @"抢单";
-        self.title = @"抢单111111111";
+        self.title = @"抢单";
     }
     return self;
 }
@@ -40,9 +44,10 @@
     [ ptableview setDelegate:self ];
     [ ptableview setDataSource:self ];
     [ self.view addSubview:ptableview ];
-    [ ptableview setSeparatorStyle:UITableViewCellSeparatorStyleNone ];
+    [ ptableview setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine ];
     
-    [ self loadcontendlist ];
+    [ self loadcontends ];
+//    [ self loadcontendlist ];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,7 +59,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [ super viewWillAppear:animated ];
-    [ self starttimer ];
+//    [ self starttimer ];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -62,6 +67,23 @@
     [ super viewWillDisappear:animated ];
     
     [ self stoptimer ];
+}
+
+-(void) loadcontends
+{
+    CMyWorkerRefreshContendsParaments* pworkerrefreshparaments = [ [CMyWorkerRefreshContendsParaments alloc] initWithData:@"1" ];
+    NSString* sret = [ [CMyNetWorkInterface SharedNetWork] WorkerContend:[ pworkerrefreshparaments GetServerInterfaceParamens ] ];
+    CMyServerResultData* pserverresult = [ [CMyServerResultData alloc] initWithResultData:sret ];
+    if ([ pserverresult GetResult ])
+    {
+        pcontendlist = (NSMutableArray*)[ pserverresult GetResultData ];
+        NSLog(@"get data:%@", pcontendlist);
+        NSLog(@"worker load contend success");
+    }
+    else
+    {
+        NSLog(@"worker load contend failed");
+    }
 }
 
 -(void) loadcontendlist
@@ -151,40 +173,58 @@
     UITableViewCell *cell = nil;
     static NSString * const kCellIdentifier = @"contendCell";
     
-    //    NSInteger ltype = [ self getcellviewtype:indexPath.row ];
     cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
     
-    NSInteger lindex = pcontendlist.count-indexPath.row-1;
-    
+    NSInteger lindex = indexPath.row;
+
     NSDictionary* pcontend = [ pcontendlist objectAtIndex:lindex ];
+    
+    NSString* sdate = [ NSString stringWithFormat:@"%@", [pcontend objectForKey:@"date"] ];
+    NSString* sdate1 = [ NSString stringWithFormat:@"%@", [pcontend objectForKey:@"start_time"] ];
+    NSString* sdate2 = [ NSString stringWithFormat:@"%@", [pcontend objectForKey:@"end_time"] ];
+    
+    NSString*   saddress = [ NSString stringWithFormat:@"%@", [pcontend objectForKey:@"address"] ];
+    NSString*   stimerange = [ NSString stringWithFormat:@"%@ %@--%@", sdate, sdate1, sdate2 ];
+    
+    NSDictionary* pcustomer = [pcontend objectForKey:@"customer"];
+    NSString*   susername = [ NSString stringWithFormat:@"%@", [pcustomer objectForKey:@"nick_name"] ];
     
     if (!cell)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier];
         CGRect arect = CGRectMake(2, 2, cell.contentView.frame.size.width-2*2, cell.contentView.frame.size.height-2*2);
         
-        CGRect adsrect = CGRectMake(10 , 5, arect.size.width-20, 15);
+        CGRect adsrect = CGRectMake(10 , 5, arect.size.width-20, 20);
         UILabel* paddress = [ [UILabel alloc] initWithFrame:adsrect ];
         [ cell.contentView addSubview:paddress ];
-        [ paddress setText:[ NSString stringWithString:[ pcontend objectForKey:@"address" ] ] ];
+        [ paddress setText:saddress ];
         [ paddress setTextAlignment:NSTextAlignmentLeft ];
         [ paddress setTag:101 ];
         
-        CGRect timerect = CGRectMake(10, adsrect.origin.y + adsrect.size.height + 5, arect.size.width-20, 15);
+        CGRect timerect = CGRectMake(10, adsrect.origin.y + adsrect.size.height + 5, arect.size.width-20, 20);
         UILabel* ptime = [ [UILabel alloc] initWithFrame:timerect ];
         [ cell.contentView addSubview:ptime ];
-        [ ptime setText:[ NSString stringWithString:[ pcontend objectForKey:@"time" ] ] ];
+        [ ptime setText:stimerange ];
         [ ptime setTextAlignment:NSTextAlignmentLeft ];
         [ ptime setTag:102 ];
         
+        CGRect userrect = CGRectMake(10, timerect.origin.y + timerect.size.height + 5, arect.size.width-20, 20);
+        UILabel* puser = [ [UILabel alloc] initWithFrame:userrect ];
+        [ cell.contentView addSubview:puser ];
+        [ puser setText:susername ];
+        [ puser setTextAlignment:NSTextAlignmentLeft ];
+        [ puser setTag:103 ];
     }
     else
     {
         UILabel* paddress = (UILabel*)[ cell.contentView viewWithTag:101 ];
-        [ paddress setText:[ NSString stringWithString:[ pcontend objectForKey:@"address" ] ] ];
+        [ paddress setText:saddress ];
         
         UILabel* ptime = (UILabel*)[ cell.contentView viewWithTag:102 ];
-        [ ptime setText:[ NSString stringWithString:[ pcontend objectForKey:@"time" ] ] ];
+        [ ptime setText:stimerange ];
+        
+        UILabel* puser = (UILabel*)[ cell.contentView viewWithTag:103 ];
+        [ puser setText:susername ];
     }
     
     return cell;
@@ -204,16 +244,15 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSInteger lheight = 60;
+    NSInteger lheight = 80;
     return lheight;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    CMyOrderDetailViewController* porderdetailviercontroler = [ [CMyOrderDetailViewController alloc] init ];
-//    NSDictionary* pdic = [ porderlist objectAtIndex:indexPath.row ];
-//    [ porderdetailviercontroler setorderinfo:pdic ];
-//    [ self presentViewController:porderdetailviercontroler animated:YES completion:nil ];
+    NSDictionary* pdic = [ pcontendlist objectAtIndex:indexPath.row ];
+    CMyWorkerContendDetailViewController* pworkercontenddetail = [ [CMyWorkerContendDetailViewController alloc] initWithContend:pdic ];
+    [self.navigationController pushViewController:pworkercontenddetail animated:YES];
 }
 
 

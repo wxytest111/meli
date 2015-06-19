@@ -6,6 +6,21 @@
 
 #import <UIKit/UIKit.h>
 
+#define ScreenWidth            [ [UIScreen mainScreen] bounds ].size.width
+#define ScreenHeight           [ [UIScreen mainScreen] bounds ].size.height
+#define ScreenHeightAppframe   [ [UIScreen mainScreen] applicationFrame ].size.height
+
+#define TablebarHeight         49
+#define Navigationbarheight    44
+#define Statusbarheight        20
+
+#define Tarbaritemrest      5
+
+#define Tabbaritemwidth     ((ScreenWidth-Tarbaritemrest*2)/4)
+
+#define ContentviewHeight      (ScreenHeight-Statusbarheight-Navigationbarheight-TablebarHeight)
+
+
 CGPoint CGRectGetCenter(CGRect rect);
 CGRect  CGRectMoveToCenter(CGRect rect, CGPoint center);
 

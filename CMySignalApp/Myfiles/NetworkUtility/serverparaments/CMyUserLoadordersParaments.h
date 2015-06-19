@@ -10,7 +10,7 @@
 
 @interface CMyUserLoadordersParaments : CMyServerParaments
 {
-    NSString*   suserid;
+    NSString*   suserphone;
     NSString*   stoken;
     NSString*   susertype;
     NSString*   spage;

@@ -11,10 +11,20 @@
 
 enum
 {
-    USER_TYPE_NORMAL = 0,
+    USER_TYPE_TEMP  = 0,
+    USER_TYPE_NORMAL,
     USER_TYPE_WORKER,
-    USER_TYPE_TEMP,
     USER_TYPE_OTHER
+};
+
+
+enum
+{
+    created     = 0,
+    submited    = 1,
+    beginning   = 2,
+    ending      = 3,
+    other
 };
 
 enum

@@ -14,21 +14,21 @@
 
 @implementation CMyCreateOderViewController
 
+-(instancetype) initWithItem:(BOOL)bcreatebt
+{
+    self = [ super initWithItem:bcreatebt ];
+    
+    if (self)
+    {
+        sright = [ NSString stringWithFormat:@"%@", @"创建" ];
+    }
+    return self;
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    psubmitbt = [ [UIButton alloc] init ];
-    [ psubmitbt addTarget:self action:@selector(ClickSubmitbt:) forControlEvents:UIControlEventTouchUpInside ];
-    [ psubmitbt setTitle:@"submit" forState:UIControlStateNormal ];
-    [ psubmitbt setBackgroundImage:[ UIImage imageNamed:@"nav_bg_all" ] forState:UIControlStateNormal ];
-    [ self.view addSubview:psubmitbt ];
-    
-    pcancelbt = [ [UIButton alloc] init ];
-    [ pcancelbt addTarget:self action:@selector(ClickCancelbt:) forControlEvents:UIControlEventTouchUpInside ];
-    [ pcancelbt setTitle:@"cancel" forState:UIControlStateNormal ];
-    [ pcancelbt setBackgroundImage:[ UIImage imageNamed:@"nav_bg_all" ] forState:UIControlStateNormal ];
-    [ self.view addSubview:pcancelbt ];
     
     [self.view setBackgroundColor:[ UIColor grayColor ]];
     // Do any additional setup after loading the view.
@@ -36,18 +36,19 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    CGRect cancelrect = CGRectMake(30, 30, 90, 30);
-    [pcancelbt setFrame:cancelrect];
-    
-    CGRect arect = self.view.frame;
-    CGRect submitrect = CGRectMake(arect.size.width-90-20, 30, 90, 30);
-    [ psubmitbt setFrame:submitrect ];
+    [ super viewWillAppear:animated ];
 }
 
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) ClickRightBt:(UIButton*)pbt
+{
+    ;
 }
 
 -(void) submitorder

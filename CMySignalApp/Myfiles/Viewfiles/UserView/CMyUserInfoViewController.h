@@ -10,11 +10,13 @@
 
 #import "UserLoginViewDelegate.h"
 
+#import "ModuleViewBaseViewController.h"
+
 // 用户信息界面
 
-@interface CMyUserInfoViewController : UIViewController < UserLoginViewDelegate , UserInfoDetailViewDelegate>
+@interface CMyUserInfoViewController : ModuleViewBaseViewController < UserLoginViewDelegate , UserInfoDetailViewDelegate>
 {
-    ;
+    BOOL bleftbt;
 }
 
 

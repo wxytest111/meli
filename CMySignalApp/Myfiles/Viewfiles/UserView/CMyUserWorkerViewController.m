@@ -9,7 +9,7 @@
 #import "CMyUserWorkerViewController.h"
 
 #import "CMyWorkerDetailViewController.h"
-#import "CMyCreateOderViewController.h"
+//#import "CMyCreateOderViewController.h"
 
 #import "CMyLoadWorkersParaments.h"
 
@@ -33,38 +33,25 @@
     return self;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    /*
-    UIView* pview = [ [UIView alloc] init ];
-    CGRect arect1 = [ [UIScreen mainScreen] applicationFrame ];
-    //arect1.origin.y
-    CGRect arect = CGRectMake(0, 0, arect1.size.width, arect1.size.height-93);
-    [ pview setFrame:arect ];
-    [ pview setBackgroundColor:[ UIColor grayColor ] ];
-    [ self.view addSubview:pview ];
-    */
     ptableview = [ [UITableView alloc] init ];
     [ ptableview setDataSource:self ];
     [ ptableview setDelegate:self ];
     
-    [ ptableview setSeparatorStyle:UITableViewCellSeparatorStyleNone ];
+    [ ptableview setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine ];
     [ self.view addSubview:ptableview ];
 
     lshowpage = 0;
     
     [ self loadworkers:1 ];
-    
-//    [ self loadworkerlist ];
+    [ ptableview reloadData ];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    CGRect arect = self.view.frame;
-//    [self.view setFrame:CGRectMake(arect.origin.x, arect.origin.y, arect.size.width, arect.size.height-50)];
-    
     [ptableview setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-//    NSLog(@"11111");
 }
 
 
@@ -92,8 +79,8 @@
             for (NSInteger i = 0; i < pworkerlist.count; i++)
             {
                 NSDictionary* pworker = [ pworkerlist objectAtIndex:i ];
-                NSString* sworkerid = [ NSString stringWithString:[ pworker objectForKey:@"id" ] ];
-                NSString* savatar = [ NSString stringWithString:[ pworker objectForKey:@"avatar" ] ];
+                NSString* sworkerid = [ NSString stringWithFormat:@"%@", [ pworker objectForKey:@"id" ] ];
+                NSString* savatar = [ NSString stringWithFormat:@"%@", [ pworker objectForKey:@"avatar" ] ];
                 
                 NSData* pdata = [ NSData dataWithContentsOfURL:[ NSURL URLWithString:savatar ] ];
                 if ([ [CMyLocalDatas SharedLocalDatas] isExistAnImage:sworkerid ])
@@ -109,7 +96,7 @@
 -(void) loadworkerlist
 {
     NSString* simageboy = [ NSString stringWithFormat:@"%@", @"face_boy.png" ];
-    NSString* simagegirl = [ NSString stringWithFormat:@"%@", @"face_girl.png" ];
+    NSString* simagegirl = [ NSString stringWithFormat:@"%@", USER_DEFAULT_IMAGE ];
     
     pworkerlist = [ [NSMutableArray alloc] init ];
     for (int i = 0; i < 50; i++)
@@ -156,15 +143,19 @@
     }
     
     NSDictionary* pwoker = [ pworkerlist objectAtIndex:indexPath.row ];
-    NSString* simagename = [ pwoker objectForKey:@"userid" ];
-    NSString* sworkername = [ pwoker objectForKey:@"name" ];
-    NSString* sworkerskill = [ pwoker objectForKey:@"jineng" ];
-    NSInteger lstarts   = [[ pwoker objectForKey:@"star" ] integerValue];
+//    NSString* smobile = [ NSString stringWithFormat:@"%@", [ pwoker objectForKey:@"mobile" ] ];
+    NSString* simagename = [ NSString stringWithFormat:@"%@", [ pwoker objectForKey:@"id" ] ];
+    NSString* sworkername = [ NSString stringWithFormat:@"%@", [ pwoker objectForKey:@"name" ] ];
+    NSString* sworkerskill = [ NSString stringWithFormat:@"%@", [ pwoker objectForKey:@"description" ] ];
+    NSInteger lstarts   = [[ NSString stringWithFormat:@"%@", [ pwoker objectForKey:@"star" ] ] integerValue];
     NSString* startdesc = [ NSString stringWithFormat:@"%ld 星", lstarts ];
+    
     if (![ [CMyLocalDatas SharedLocalDatas] isExistAnImage:simagename ])
     {
-        simagename = [ NSString stringWithFormat:@"%@", @"face_girl" ];
+        simagename = [ NSString stringWithFormat:@"%@", USER_DEFAULT_IMAGE ];
     }
+    
+    simagename = [ NSString stringWithFormat:@"%@", USER_DEFAULT_IMAGE ];
     
     if (!cell)
     {
@@ -177,32 +168,33 @@
         [ pimageview setImage:[ UIImage imageNamed:simagename ] ];
         [ pimageview setTag:100 ];
         
-        CGRect namerect = CGRectMake(imagerect.origin.x + imagerect.size.width + 20, 5, arect.size.width-imagerect.size.width-20-20, 15);
+        CGRect namerect = CGRectMake(imagerect.origin.x + imagerect.size.width + 20, 5, 100, 15);
         UILabel* pusername = [ [UILabel alloc] initWithFrame:namerect ];
         [ cell.contentView addSubview:pusername ];
         [ pusername setText:[ NSString stringWithString:sworkername] ];
         [ pusername setTextAlignment:NSTextAlignmentLeft ];
         [ pusername setTag:101 ];
         
-        CGRect descrect = CGRectMake(namerect.origin.x, namerect.origin.y + namerect.size.height + 5, namerect.size.width, namerect.size.height);
+        CGRect startrect = CGRectMake(namerect.origin.x+namerect.size.width+10, namerect.origin.y , 80, namerect.size.height);
+        UILabel* pstartdesc = [ [UILabel alloc] initWithFrame:startrect ];
+        [ cell.contentView addSubview:pstartdesc ];
+        [ pstartdesc setText:[ NSString stringWithString:startdesc ] ];
+        [ pstartdesc setTextAlignment:NSTextAlignmentLeft ];
+        [ pstartdesc setTag:103 ];
+        
+        CGRect descrect = CGRectMake(namerect.origin.x, namerect.origin.y + namerect.size.height + 5, 250, namerect.size.height);
         UILabel* puserdesc = [ [UILabel alloc] initWithFrame:descrect ];
         [ cell.contentView addSubview:puserdesc ];
         [ puserdesc setText:[ NSString stringWithString:sworkerskill ] ];
         [ puserdesc setTextAlignment:NSTextAlignmentLeft ];
         [ puserdesc setTag:102 ];
         
-        CGRect startrect = CGRectMake(namerect.origin.x, namerect.origin.y + namerect.size.height + 5, namerect.size.width, namerect.size.height);
-        UILabel* pstartdesc = [ [UILabel alloc] initWithFrame:startrect ];
-        [ cell.contentView addSubview:pstartdesc ];
-        [ pstartdesc setText:[ NSString stringWithString:startdesc ] ];
-        [ pstartdesc setTextAlignment:NSTextAlignmentLeft ];
-        [ pstartdesc setTag:103 ];
 
     }
     else
     {
         UIImageView* pcellview = (UIImageView*)[ cell.contentView viewWithTag:100 ];
-        [ pcellview setImage:[ UIImage imageNamed:[ NSString stringWithString:[ pwoker objectForKey:@"image" ] ] ] ];
+        [ pcellview setImage:[ UIImage imageNamed:simagename ] ];
         
         UILabel* username = (UILabel*)[ cell.contentView viewWithTag:101 ];
         [ username setText:[ NSString stringWithString:sworkername ] ];
@@ -237,10 +229,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CMyWorkerDetailViewController* pworkerdetailviercontroler = [ [CMyWorkerDetailViewController alloc] init ];
+    CMyWorkerDetailViewController* pworkerdetailviercontroler = [ [CMyWorkerDetailViewController alloc] initWithItem:YES ];
     NSDictionary* pdic = [ pworkerlist objectAtIndex:indexPath.row ];
     [ pworkerdetailviercontroler setworker:pdic ];
-    [ self presentViewController:pworkerdetailviercontroler animated:YES completion:nil ];
+    [ self.navigationController pushViewController:pworkerdetailviercontroler animated:YES ];
+//    [ self presentViewController:pworkerdetailviercontroler animated:YES completion:nil ];
 }
 
 

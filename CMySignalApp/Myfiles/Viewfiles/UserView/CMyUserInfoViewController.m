@@ -12,6 +12,9 @@
 #import "CMyUserLoginView.h"
 #import "CMyUserInfoDetailView.h"
 
+#import "CMyUserLogingViewController.h"
+
+
 #import "CMyLocalDatas.h"
 
 
@@ -28,17 +31,59 @@
     if (self)
     {
         self.title = @"用户";
+        bleftbt = NO;
     }
     return self;
 }
 
+-(instancetype) initWithItem:(BOOL)bcreatebt
+{
+    self = [ super initWithItem:bcreatebt ];
+    
+    if (self)
+    {
+        if ([ [CMyLocalDatas SharedLocalDatas] getlocallogined ])
+        {
+            sright = [ NSString stringWithFormat:@"%@", @"注销" ];
+            sleft = [ NSString stringWithFormat:@"%@", @"编辑" ];
+            bleftbt = YES;
+        }
+        else
+        {
+            sright = [ NSString stringWithFormat:@"%@", @"注销" ];
+        }
+        
+        [ self showeditbt ];
+    }
+    return self;
+}
+
+-(void) showeditbt
+{
+    if (bleftbt)
+    {
+        UIButton* editbt = [UIButton buttonWithType:UIButtonTypeCustom];
+        editbt.frame = CGRectMake(2, 0, 44, 33);
+        [ editbt setBackgroundImage:[UIImage imageNamed:@"backItem"] forState:UIControlStateNormal];
+        [ editbt setBackgroundColor:[ UIColor redColor ] ];
+        [ editbt setTitle:sleft forState:UIControlStateNormal ];
+        [ editbt addTarget:self action:@selector(ClickRightBt:) forControlEvents:UIControlEventTouchUpInside];
+        
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:editbt];
+    }
+}
+
+-(void) ClickLeftBt:(UIButton*)pbt
+{
+    ;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    CGRect arect1 = [ [UIScreen mainScreen] applicationFrame ];
-    CGRect arect = CGRectMake(0, 0, arect1.size.width, arect1.size.height-93);
+//    CGRect arect1 = [ [UIScreen mainScreen] applicationFrame ];
+    CGRect arect = CGRectMake(0, 0, ScreenWidth, ContentviewHeight);
     
     NSString* suserid = [ [CMyLocalDatas SharedLocalDatas] getlocaluserid ];
     NSInteger sltype = [ [CMyLocalDatas SharedLocalDatas] getlocalusertype ];
@@ -58,6 +103,34 @@
         [ pinfodetailview setTag:100 ];
     }
 }
+
+-(void) viewDidAppear:(BOOL)animated
+{
+    [ super viewDidAppear:animated ];
+    
+    CGRect arect1 = [ [UIScreen mainScreen] applicationFrame ];
+    CGRect arect = CGRectMake(0, 0, arect1.size.width, arect1.size.height-93);
+    
+    if ([ [CMyLocalDatas SharedLocalDatas] getlocallogined ])
+    {
+        CMyUserInfoDetailView* pinfodetailview = [ [CMyUserInfoDetailView alloc] initWithFrame:arect ];
+        self.view = pinfodetailview;
+    }
+    else
+    {
+        CMyUserLoginView* ploginview = [ [CMyUserLoginView alloc] initWithFrame:arect ];
+        self.view = ploginview;
+
+    }
+}
+
+-(void) ClickRightBt:(UIButton*)pbt
+{
+    CMyUserLogingViewController* ploginview = [ [CMyUserLogingViewController alloc] init ];
+    self.view.window.rootViewController = ploginview;
+//    NSLog(@"super ClickCreateBt");
+}
+
 
 - (void)didReceiveMemoryWarning
 {

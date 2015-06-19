@@ -12,7 +12,7 @@
 #import "CMyTableView.h"
 
 
-@interface MainViewControler : UITabBarController < ItemViewDelegate, UINavigationControllerDelegate, MyTableViewDelegate>
+@interface MainViewControler : UITabBarController < ItemViewDelegate >
 {
 @private
     UIImageView* m_tabBarBG;
@@ -31,5 +31,7 @@
 -(void) loadworkerallcontrolview;
 
 -(void) showuserloginview;
+
+- (void)showOrHiddenTabBarView:(BOOL)isHidden;
 
 @end

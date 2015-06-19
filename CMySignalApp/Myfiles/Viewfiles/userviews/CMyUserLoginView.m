@@ -8,6 +8,26 @@
 
 #import "CMyUserLoginView.h"
 #import "CMyNetWorkInterface.h"
+#import "MainViewControler.h"
+
+#import "CMyLocalDatas.h"
+//
+//#define UserAddress     @"address"
+//#define UserStatus      @"status"
+//#define UserMobile      @"mobile"
+//#define UserType        @"user_type"
+//
+#if (__TYPE__==__USER__)
+
+#define loginname          @"17792039701"
+#define loginpasswd        @"17792039701"
+
+#else if( __TYPE__==__WORKER__ )
+
+#define loginname          @"13264319058"
+#define loginpasswd        @"13264319058"
+
+#endif
 
 @implementation CMyUserLoginView
 
@@ -52,7 +72,7 @@
     CGRect rect2 = CGRectMake(lx+llablewidth+lwidthspace, ly, ltextwidth, ltextheight);
     ptextphone = [ [UITextField alloc] initWithFrame:rect2 ];
     [ ptextphone setTextAlignment:NSTextAlignmentLeft ];
-    [ ptextphone setText:@"17792039701" ];
+    [ ptextphone setText:loginname ];
     [ ptextphone setDelegate:self ];
     [ ptextphone setBackgroundColor:[ UIColor whiteColor ] ];
     [ ptextphone setSecureTextEntry:NO ];
@@ -69,13 +89,30 @@
     CGRect rect4 = CGRectMake(lx+llablewidth+lwidthspace, ly, ltextwidth, ltextheight);
     ptextpwd = [ [UITextField alloc] initWithFrame:rect4 ];
     [ ptextpwd setTextAlignment:NSTextAlignmentLeft ];
-    [ ptextpwd setText:@"" ];
+    [ ptextpwd setText:loginpasswd ];
     [ ptextpwd setSecureTextEntry:YES ];
     [ ptextpwd setDelegate:self ];
     [ ptextpwd setBackgroundColor:[ UIColor whiteColor ] ];
     [ ptextpwd setTag:101 ];
     [ self addSubview:ptextpwd ];
+    
+    ly = ly + ltextheight+5;
+    CGRect typerect1 = CGRectMake(lx, ly, llablewidth, llableheight);
+    CGRect typerect2 = CGRectMake(lx+llablewidth+lwidthspace, ly, lbtwidth, lbtheight);
 
+    UILabel*  ptypelable = [ [UILabel alloc] initWithFrame:typerect1 ];
+    [ ptypelable setText:@"用户类型:" ];
+    [ ptypelable setTextAlignment:NSTextAlignmentRight ];
+//    [ self addSubview:ptypelable ];
+    
+    pbtusertype = [ [UIButton alloc] initWithFrame:typerect2 ];
+    [ pbtusertype setTitle:@"用户" forState:UIControlStateNormal ];
+    [ pbtusertype setTitle:@"工人" forState:UIControlStateSelected ];
+    [ pbtusertype setBackgroundImage:[ UIImage imageNamed:@"nav_bg_all" ] forState:UIControlStateNormal ];
+    [ pbtusertype addTarget:self action:@selector(ClickUserType:) forControlEvents:UIControlEventTouchUpInside ];
+    [ pbtusertype setSelected:NO ];
+//    [ self addSubview:pbtusertype ];
+    
     ly = ly + ltextheight + lheightspce + 100;
     CGRect rect5 = CGRectMake(lx, ly, lbtwidth, lbtheight);
     UIButton* pbtcancel = [ [UIButton alloc] initWithFrame:rect5 ];
@@ -111,6 +148,20 @@
     [self addGestureRecognizer:tap];
 }
 
+-(void) ClickUserType:(id)sender
+{
+    UIButton* pbt = (UIButton*)sender;
+    
+    if (pbt.selected)
+    {
+        [ pbt setSelected:NO ];
+    }
+    else
+    {
+        [ pbt setSelected:YES ];
+    }
+}
+
 -(void) ClickRestRect:(UITapGestureRecognizer *)tap
 {
     [ ptextpwd resignFirstResponder ];
@@ -119,19 +170,67 @@
 
 -(void) ClickCancel:(id)sender
 {
-    [puserlogindelegate BtClickCancel:sender];
+    [ [CMyLocalDatas SharedLocalDatas] setlocalusertype:0 ];
+    [ [CMyLocalDatas SharedLocalDatas] setlocaluserid:@"" ];
+    [ [CMyLocalDatas SharedLocalDatas] setlocaltoken:@"" ];
+    [ [CMyLocalDatas SharedLocalDatas] setlocaluserphone:@"" ];
+    [ [CMyLocalDatas SharedLocalDatas] savelocalinfo ];
+    
+    MainViewControler* pmainview = [ [MainViewControler alloc] init ];
+    self.window.rootViewController = pmainview;
+    return ;
 }
 
 -(void) ClickSubmit:(id)sender
 {
+    NSString* sphone = ptextphone.text;
+    NSString* spwd = ptextpwd.text;
     
-    [ puserlogindelegate BTClickSubmit:sender ];
-    NSLog(@"------%s-----", __FUNCTION__);
+#if (__TYPE__==__USER__)
+    NSString* stype = [ NSString stringWithFormat:@"1" ];
+#else if( __TYPE__==__WORKER__ )
+    NSString* stype = [ NSString stringWithFormat:@"2" ];
+#endif
+
+    CMyUserLoginParements* ploginparament = [ [CMyUserLoginParements alloc] initWitData:sphone pwd:spwd type:stype  ];
+    NSString* sret = [ [CMyNetWorkInterface SharedNetWork] UserLogin:[ ploginparament GetServerInterfaceParamens ] ];
+    CMyServerResultData* pserverresult = [ [CMyServerResultData alloc] initWithResultData:sret ];
+    if ([ pserverresult GetResult ])
+    {
+        NSString* stoken = [ NSString stringWithString:[ pserverresult GetToken ] ];
+        NSDictionary* pdata     = [ pserverresult GetResultData ];
+        NSString* suserphone    = [ pdata objectForKey:UserMobile ];
+        NSString* susertype     = [ pdata objectForKey:UserType ];
+        NSString* suserid       = [ pdata objectForKey:UserID ];
+        NSString* susername     = [ pdata objectForKey:UserName ];
+        NSString* suserstatus   = [ pdata objectForKey:UserStatus ];
+        NSString* suseraddress  = [ pdata objectForKey:UserAddress ];
+        
+        [ [CMyLocalDatas SharedLocalDatas] setlocaluserstatus:suserstatus];
+        [ [CMyLocalDatas SharedLocalDatas] setlocaluseraddress:suseraddress];
+        [ [CMyLocalDatas SharedLocalDatas] setlocalusernickname:susername ];
+        [ [CMyLocalDatas SharedLocalDatas] setlocaluserphone:suserphone ];
+        [ [CMyLocalDatas SharedLocalDatas] setlocaltoken:stoken ];
+        [ [CMyLocalDatas SharedLocalDatas] setlocaluserid:suserid ];
+        [ [CMyLocalDatas SharedLocalDatas] setlocalusertype:[ susertype integerValue ] ];
+        
+        [ [CMyLocalDatas SharedLocalDatas] savelocalinfo ];
+        
+        NSLog(@"login success");
+    }
+    else
+    {
+        NSLog(@"login failed");
+    }
+    
+    MainViewControler* pmainview = [ [MainViewControler alloc] init ];
+    self.window.rootViewController = pmainview;
 }
 
 -(void) ClickRegister:(id)sender
 {
-    [ puserlogindelegate BTClickRegister:sender ];
+    MainViewControler* pmainview = [ [MainViewControler alloc] init ];
+    self.window.rootViewController = pmainview;
     NSLog(@"------%s-----", __FUNCTION__);
 }
 

@@ -37,11 +37,15 @@
     
     [ self.view setBackgroundColor:[ UIColor grayColor ] ];
     
-    pbackbt = [ [UIButton alloc] init ];
-    [ pbackbt setTitle:@"返回" forState:UIControlStateNormal ];
-    [ pbackbt setBackgroundImage:[ UIImage imageNamed:@"nav_bg_all" ] forState:UIControlStateNormal ];
-    [ pbackbt addTarget:self action:@selector(Clickbackbt:) forControlEvents:UIControlEventTouchUpInside ];
-    [self.view addSubview:pbackbt];
+    {
+        UIButton *btback = [UIButton buttonWithType:UIButtonTypeCustom];
+        btback.frame = CGRectMake(2, 0, 44, 33);
+        [ btback setBackgroundImage:[UIImage imageNamed:@"backItem"] forState:UIControlStateNormal];
+        [ btback setTitle:@"返回" forState:UIControlStateNormal ];
+        [ btback addTarget:self action:@selector(Clickbackbt:) forControlEvents:UIControlEventTouchUpInside];
+        
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btback];
+    }
     
     pwebview = [ [UIWebView alloc] init ];
     [ pwebview loadRequest: [ NSURLRequest requestWithURL:[ NSURL URLWithString:saddress ] ] ];
@@ -50,17 +54,18 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    CGRect backrect = CGRectMake(30, 30, 50, 30);
+    CGRect backrect = CGRectMake(30, 0, 50, 30);
     [pbackbt setFrame:backrect];
     
     CGRect arect = self.view.frame;
-    CGRect webviewrect = CGRectMake(arect.size.width-60-20, 30, 60, self.view.frame.size.height-30-30);
+    CGRect webviewrect = CGRectMake(0, 0, arect.size.width, self.view.frame.size.height);
     [ pwebview setFrame:webviewrect ];
 }
 
 -(void) Clickbackbt:(id)sender
 {
-    [ self dismissViewControllerAnimated:YES completion:nil ];
+    [ self.navigationController popViewControllerAnimated:YES ];
+    //[ self dismissViewControllerAnimated:YES completion:nil ];
 }
 
 /*

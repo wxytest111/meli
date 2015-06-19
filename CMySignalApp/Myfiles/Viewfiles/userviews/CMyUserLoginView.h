@@ -17,6 +17,7 @@
     
     UITextField* ptextpwd;
     UITextField* ptextphone;
+    UIButton*   pbtusertype;
 }
 
 @property   (atomic) id<UserLoginViewDelegate>   userlogindelegate;

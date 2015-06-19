@@ -10,9 +10,15 @@
 
 #import "UserLoginViewDelegate.h"
 
-@interface CMyUserInfoDetailView : UIView
+@interface CMyUserInfoDetailView : UIScrollView
 {
     id<UserInfoDetailViewDelegate>  puserdetaildelegate;
+    
+    UIImageView*    pimageview;
+    UILabel*        plablename;
+    UILabel*        plablemobile;
+    UILabel*        plableaddress;
+    UILabel*        plablehistory;
 }
 
 @property   (atomic) id<UserInfoDetailViewDelegate>  userdetaildelegate;

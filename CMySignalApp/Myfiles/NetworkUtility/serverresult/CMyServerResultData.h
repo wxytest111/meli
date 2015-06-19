@@ -19,6 +19,12 @@
 #define REQUEST_RESULT_DATA                 @"data"
 #define REQUEST_RESULT_TOKEN                @"token"
 
+
+
+#define USER_DEFAULT_IMAGE                  @"face_girl.png"
+#define USER_DEFAULT_BOY_IMAGE              @"face_boy.png"
+
+
 @interface CMyServerResultData : NSObject
 {
     NSDictionary* m_pResultData;

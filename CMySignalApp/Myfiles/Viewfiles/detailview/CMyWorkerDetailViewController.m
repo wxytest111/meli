@@ -9,12 +9,30 @@
 #import "CMyWorkerDetailViewController.h"
 #import "CMyCreateOderViewController.h"
 
+#import "CMyNetWorkInterface.h"
+
+#import "CMyOrderCreateViewController.h"
+#import "CMyOrderCreateViewController.h"
+
 
 @interface CMyWorkerDetailViewController ()
 
 @end
 
 @implementation CMyWorkerDetailViewController
+
+-(instancetype) initWithItem:(BOOL)bcreatebt
+{
+    self = [ super initWithItem:bcreatebt ];
+    
+    if (self)
+    {
+        sright = [ NSString stringWithFormat:@"%@", @"约她" ];
+        border = NO;
+    }
+    return self;
+}
+
 
 - (instancetype)init
 {
@@ -31,45 +49,60 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [ self.view setBackgroundColor:[ UIColor grayColor ] ];
+}
 
-    pbackbt = [ [UIButton alloc] init ];
-    [ pbackbt setTitle:@"返回" forState:UIControlStateNormal ];
-    [ pbackbt setBackgroundImage:[ UIImage imageNamed:@"nav_bg_all" ] forState:UIControlStateNormal ];
-    [ pbackbt addTarget:self action:@selector(Clickbackbt:) forControlEvents:UIControlEventTouchUpInside ];
-    [self.view addSubview:pbackbt];
-
-    pcreateorderbt = [ [UIButton alloc] init ];
-    
-    [ pcreateorderbt setTitle:@"order" forState:UIControlStateNormal ];
-    [ pcreateorderbt setBackgroundImage:[ UIImage imageNamed:@"nav_bg_all" ] forState:UIControlStateNormal ];
-    [ pcreateorderbt addTarget:self action:@selector(ClickCreatOrder:) forControlEvents:UIControlEventTouchUpInside ];
-    [ self.view addSubview:pcreateorderbt ];
-    // Do any additional setup after loading the view.
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [ super viewWillDisappear:animated ];
+    if (border)
+    {
+        ;
+    }
+    else
+    {
+        [self.navigationController popViewControllerAnimated:NO];
+    }
+//  [self.navigationController popViewControllerAnimated:NO];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    CGRect backrect = CGRectMake(30, 30, 50, 30);
-    [pbackbt setFrame:backrect];
-
-    CGRect arect = self.view.frame;
-    CGRect orderrect = CGRectMake(arect.size.width-60-20, 30, 60, 30);
-    [ pcreateorderbt setFrame:orderrect ];
-}
-
--(void) Clickbackbt:(id)sender
-{
-    [ self dismissViewControllerAnimated:YES completion:nil ];
-}
-
--(void) ClickCreatOrder:(id)sender
-{
-    NSLog(@"发起一个预约");
+    [ super viewWillAppear:animated ];
     
-    CMyCreateOderViewController* pcreateorderviewcontrol = [ [CMyCreateOderViewController alloc] init ];
-    [ self presentViewController:pcreateorderviewcontrol animated:YES completion:nil ];
+    CGRect arect3 = CGRectMake(0, 0, ScreenWidth, ContentviewHeight);
+    self.view.frame = arect3;
+    
+    NSInteger lableheight = 30;
+    CGRect arect = self.view.frame;
+    
+    CGRect scrlrect = CGRectMake(0, 0, arect.size.width, arect.size.height);
+    pscrolview.frame = scrlrect;
+    
+    CGRect imagerect = CGRectMake(5, 5, arect.size.width-20, arect.size.width-20);
+    pimageview.frame = imagerect;
+    
+    CGRect namerect = CGRectMake(10, imagerect.origin.y+imagerect.size.height+10, arect.size.width-20, lableheight);
+    plablename.frame = namerect;
+    
+    CGRect startrect = CGRectMake(10, namerect.origin.y+namerect.size.height+10, arect.size.width-20, lableheight);
+    plablestarts.frame = startrect;
+    
+    CGRect skillrect = CGRectMake(10, startrect.origin.y+namerect.size.height+10, arect.size.width-20, lableheight*2);
+    plableskill.frame = skillrect;
+    
+    CGRect descrect = CGRectMake(10, skillrect.origin.y+skillrect.size.height+10, arect.size.width-20, lableheight*2);
+    plabledesc.frame = descrect;
+    
+    arect.size.height = descrect.origin.y + descrect.size.height + 20;
+    pscrolview.contentSize = arect.size;
+}
+
+-(void) ClickRightBt:(UIButton*)pbt
+{
+    border = YES;
+    NSLog(@"ClickRightBt");
+    CMyOrderCreateViewController* pcreateorder = [ [CMyOrderCreateViewController alloc] initWithItem:YES worker:pworkerinfo ];
+    [ self.navigationController pushViewController:pcreateorder animated:YES ];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,9 +110,49 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) lineviews
+{
+    pscrolview = [ [UIScrollView alloc] init ];
+    [ self.view addSubview:pscrolview ];
+    [ pscrolview setBackgroundColor:[ UIColor grayColor ] ];
+//    [ self.view setBackgroundColor:[ UIColor grayColor ] ];
+
+    NSString* simage = [ NSString stringWithFormat:@"姓名：%@", [pworkerinfo objectForKey:@"id"] ];
+    //    pimageview = [ [UIImageView alloc] initWithImage:[ UIImage imageNamed:simage ] ];
+    pimageview = [ [UIImageView alloc] initWithImage:[ UIImage imageNamed:USER_DEFAULT_IMAGE ] ];
+    [ pscrolview addSubview:pimageview ];
+    
+    NSString* sname = [ NSString stringWithFormat:@"姓名：%@", [pworkerinfo objectForKey:@"name"] ];
+    plablename = [ [UILabel alloc] init ];
+    [ plablename setText:sname];
+    [ plablename setTextAlignment:NSTextAlignmentLeft ];
+    [ pscrolview addSubview:plablename];
+    
+    NSString* sstarts = [ NSString stringWithFormat:@"评分：%@", [pworkerinfo objectForKey:@"star"] ];
+    plablestarts = [ [UILabel alloc] init ];
+    [ plablestarts setText:sstarts];
+    [ plablestarts setTextAlignment:NSTextAlignmentLeft ];
+    [ pscrolview addSubview:plablestarts];
+    
+    NSString* sdesc = [ NSString stringWithFormat:@"自我描述：%@%@", [pworkerinfo objectForKey:@"description"], [pworkerinfo objectForKey:@"description"] ];
+    plabledesc = [ [UILabel alloc] init ];
+    [ plabledesc setText:sdesc];
+    [ plabledesc setNumberOfLines:0 ];
+    [ plabledesc setTextAlignment:NSTextAlignmentLeft ];
+    [ pscrolview addSubview:plabledesc];
+    
+    NSString* sskill = [ NSString stringWithFormat:@"技术：%@%@", [pworkerinfo objectForKey:@"skill"],[pworkerinfo objectForKey:@"skill"] ];
+    plableskill = [ [UILabel alloc] init ];
+    [ plableskill setText:sskill];
+    [ plableskill setNumberOfLines:0 ];
+    [ plableskill setTextAlignment:NSTextAlignmentLeft ];
+    [ pscrolview addSubview:plableskill];
+}
+
 -(void) setworker:(NSDictionary*)pdic
 {
-    ;
+    pworkerinfo = [ [NSDictionary alloc] initWithDictionary:pdic ];
+    [ self lineviews ];
 }
 
 /*

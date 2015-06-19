@@ -25,7 +25,7 @@
 
 -(NSInteger) GetResult
 {
-    NSString* sresult = [ NSString stringWithString:[ m_pResultData objectForKey:REQUEST_RESULT_RESULT ] ];
+    NSString* sresult = [ NSString stringWithFormat:@"%@", [ m_pResultData objectForKey:REQUEST_RESULT_RESULT ] ];
     return [ sresult integerValue ];
 }
 
@@ -46,7 +46,7 @@
 
 -(id) GetResultData
 {
-    id adata = [ m_pResultData objectForKey:REQUEST_RESULT_ERRORSTRING ];
+    id adata = [ m_pResultData objectForKey:REQUEST_RESULT_DATA ];
     return adata;
 }
 

@@ -22,6 +22,7 @@
 
 -(void) loadcontendlist;
 
+-(void) loadcontends;
 -(void) starttimer;
 -(void) stoptimer;
 -(void) addcontend;

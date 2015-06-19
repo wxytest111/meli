@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CMyCreateOderViewController : UIViewController
+#import "ModuleViewBaseViewController.h"
+
+
+@interface CMyCreateOderViewController : ModuleViewBaseViewController
 {
     UIButton*   psubmitbt;
     UIButton*   pcancelbt;

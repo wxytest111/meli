@@ -8,13 +8,30 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CMyWorkerDetailViewController : UIViewController
+#import "ModuleViewBaseViewController.h"
+
+
+@interface CMyWorkerDetailViewController : ModuleViewBaseViewController
 {
-    UIButton* pbackbt;
-    UIButton* pcreateorderbt;
+//    UIButton* pbackbt;
+//    UIButton* pcreateorderbt;
+    
+    UIScrollView* pscrolview;
+    
+    UIImageView* pimageview;
+    
+    UILabel*    plablename;
+    UILabel*    plablestarts;
+    UILabel*    plabledesc;
+    UILabel*    plableskill;
+    
+    NSDictionary*       pworkerinfo;
+    
+    BOOL            border;
 }
 
 -(void) setworker:(NSDictionary*)pdic;
+-(void) lineviews;
 
 -(void) Clickbackbt:(id)sender;
 -(void) ClickCreatOrder:(id)sender;

@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ModuleViewBaseViewController.h"
+
 // 用户历史订单界面
 
-@interface CMyUserHistoryViewControler : UIViewController < UITableViewDataSource, UITableViewDelegate >
+@interface CMyUserHistoryViewControler : ModuleViewBaseViewController < UITableViewDataSource, UITableViewDelegate >
 {
     UITableView*    ptableview;
     
